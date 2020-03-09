@@ -1,0 +1,22 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/theme/bootstrap-tagsinput.min.js": "/js/theme/bootstrap-tagsinput.min.js",
+    "/js/theme/bootstrap.min.js": "/js/theme/bootstrap.min.js",
+    "/js/theme/carvelley.js": "/js/theme/carvelley.js",
+    "/js/theme/infobox.min.js": "/js/theme/infobox.min.js",
+    "/js/theme/isotope.pkgd.js": "/js/theme/isotope.pkgd.js",
+    "/js/theme/jarallax-video.min.js": "/js/theme/jarallax-video.min.js",
+    "/js/theme/jarallax.min.js": "/js/theme/jarallax.min.js",
+    "/js/theme/jquery-3.4.1.min.js": "/js/theme/jquery-3.4.1.min.js",
+    "/js/theme/jquery-steps.js": "/js/theme/jquery-steps.js",
+    "/js/theme/jquery-ui.js": "/js/theme/jquery-ui.js",
+    "/js/theme/jquery.nice-select.min.js": "/js/theme/jquery.nice-select.min.js",
+    "/js/theme/maps.js": "/js/theme/maps.js",
+    "/js/theme/markerclusterer.js": "/js/theme/markerclusterer.js",
+    "/js/theme/popper.min.js": "/js/theme/popper.min.js",
+    "/js/theme/slick.min.js": "/js/theme/slick.min.js",
+    "/js/theme/wow.js": "/js/theme/wow.js",
+    "/js/theme/all.js": "/js/theme/all.js",
+    "/css/theme/all.css": "/css/theme/all.css"
+}
