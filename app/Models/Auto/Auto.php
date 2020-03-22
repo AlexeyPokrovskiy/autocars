@@ -72,6 +72,26 @@ class Auto extends Model
     }
 
     /**
+     * Модель АВТО через промежуточные
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function model()
+    {
+        return $this->hasManyThrough('App\Models\Ref\ModelCar', 'App\Models\Ref\CoreRef',"model_id","id");
+    }
+
+    /**
+     * Марка АВТО через промежуточные
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function mark()
+    {
+        return $this->hasManyThrough('App\Models\Ref\Mark', 'App\Models\Ref\CoreRef',"mark_id","id");
+    }
+
+    /**
      * Цвет
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

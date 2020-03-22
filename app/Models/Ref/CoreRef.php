@@ -90,8 +90,16 @@ class CoreRef extends Model
      */
     public function model()
     {
-        return $this->belongsTo('App\Models\Ref\Model', 'model_id', 'id');
+        return $this->belongsTo('App\Models\Ref\ModelCar', 'model_id', 'id');
     }
 
-
+    /**
+     * Модель
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function cars()
+    {
+        return $this->belongsTo('App\Models\Auto\Auto', 'id', 'core_id');
+    }
 }
