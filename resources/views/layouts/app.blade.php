@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="#">
-    <title>AutoCar | Car Stock | Homepage Главная</title>
-    <meta  name="description" content="CARSTOCK.COM.UA — купить новые и б/у автомобилей. Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.">
+    <title>@yield("title")</title>
+    <meta  name="description" content="@yield("meta_description")">
     <meta name="yandex-verification" content="0ced6f1bf4142ef2" />
 
     <!-- Fav and touch icons -->

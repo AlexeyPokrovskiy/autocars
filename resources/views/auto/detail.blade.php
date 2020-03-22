@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('title',"AutoCar | Car Stock | – Продам ".$car->core->mark->name." ".$car->core->model->name." ".$car->year." ".$car->fuel->name." ".$car->core->volume." ".$car->core->body." бу в Украине, цена ".$car->price."$")
+@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Продаю Купить ".$car->core->mark->name." ".$car->core->model->name." ".$car->year." ".$car->fuel->name." ".$car->core->volume." ".$car->core->body." бу в Украине, цена ".$car->price."$ Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
 @section('content')
 <!-- User Details -->
 {{--<div class="user-page-sec p-relative car-details">--}}

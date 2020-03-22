@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('title',"AutoCar | Car Stock | Homepage Главная")
+@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
 
 @section('content')
 <!-- Slider Section -->
