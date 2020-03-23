@@ -8587,3 +8587,16 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 #footer-style-3 .copyright .ft-btns a {
     margin-left: 10px;
 }
+.time-publication{
+    color: #9b9b9b;
+}
+.time-publication-green{
+    color: #3c9806;
+}
+.page-link{
+    color: #ff8500;
+}
+.page-item.active .page-link{
+    background-color: #000000;
+    border-color: #000000;
+}

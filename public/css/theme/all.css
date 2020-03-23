@@ -9629,7 +9629,7 @@ a.ui-button:active,
  .nice-select .option.selected{
   background-color: #fff;
     color: #6c757d;
-    font-weight: 500;
+    font-weight: 500; 
  }
 .no-csspointerevents .nice-select .list {
   display: none; }
@@ -9971,7 +9971,7 @@ a.ui-button:active,
     #menu-style-4 nav ul {
         display: none;
     }
-
+    
     #menu-style-1 .searchbox .input-group .input-group-prepend button:first-child {
         padding: 0 10px;
     }
@@ -10967,16 +10967,16 @@ a.ui-button:active,
     .car-design-tab-sec .tab-box .nav-tabs .nav-item{
         margin-right: 15px;
     }
-    #login-page .modal-body .social-login .social-btn a,
+    #login-page .modal-body .social-login .social-btn a, 
     #register-page .modal-body .social-login .social-btn a,
-    #login .modal-body .social-login .social-btn a,
+    #login .modal-body .social-login .social-btn a, 
     #register .modal-body .social-login .social-btn a{
         padding: 0 10px;
     }
     .car-categories-sec .category-slider .car-categories .category-caption{
         bottom: -75px;
     }
-    nav.custom-pagination .pagination li.page-item:first-child a,
+    nav.custom-pagination .pagination li.page-item:first-child a, 
     nav.custom-pagination .pagination li.page-item:last-child a {
         padding: 0 10px;
     }
@@ -19971,8 +19971,14 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 #footer-style-3 .copyright .ft-btns a {
     margin-left: 10px;
 }
+.time-publication{
+    color: #9b9b9b;
+}
+.time-publication-green{
+    color: #3c9806;
+}
 .page-link{
-    color:#ff8500;
+    color: #ff8500;
 }
 .page-item.active .page-link{
     background-color: #000000;

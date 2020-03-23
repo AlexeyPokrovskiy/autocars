@@ -40,12 +40,12 @@
                 <div class="col-xl-6 col-lg-6 col-md-7 col-sm-12">
                     <div class="top-contact">
                         <ul>
-                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +123 4567 8910</a>
+                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +380 93 158 84 85</a>
                             </li>
-                            <li><a href="/#" class="text-dark-grey"><i class="fas fa-map-marker-alt"></i> Sell Your Car</a>
+                            <li><a href="/#" class="text-dark-grey"><i class="fas fa-map-marker-alt"></i> Украина</a>
                             </li>
-                            <li><a href="/#" class="text-dark-grey"><i class="fas fa-crosshairs"></i> Cars Around me</a>
-                            </li>
+{{--                            <li><a href="/#" class="text-dark-grey"><i class="fas fa-crosshairs"></i> Cars Around me</a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </div>
@@ -57,21 +57,21 @@
                                     <img src="/images/user.png" class="rounded-circle" alt="#">Войти
                                 </a>
                             </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="text-dark-grey" data-toggle="dropdown">
-                                    <img src="/images/usa.png" class="rounded-circle" alt="#">USD <i class="fas fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="/#" class="text-dark-grey">
-                                            <img src="/images/italy.png" class="rounded-circle" alt="#">EUR</a>
-                                    </li>
-                                    <li>
-                                        <a href="/#" class="text-dark-grey">
-                                            <img src="/images/germany.png" class="rounded-circle" alt="#">GBP</a>
-                                    </li>
-                                </ul>
-                            </li>
+{{--                            <li class="dropdown">--}}
+{{--                                <a href="javascript:void(0)" class="text-dark-grey" data-toggle="dropdown">--}}
+{{--                                    <img src="/images/usa.png" class="rounded-circle" alt="#">USD <i class="fas fa-caret-down"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="/#" class="text-dark-grey">--}}
+{{--                                            <img src="/images/italy.png" class="rounded-circle" alt="#">EUR</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="/#" class="text-dark-grey">--}}
+{{--                                            <img src="/images/germany.png" class="rounded-circle" alt="#">GBP</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li class="dropdown border-right"><a href="javascript:void(0)" class="text-dark-grey" data-toggle="dropdown">Помощь <i class="fas fa-caret-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="contact.html" class="text-dark-grey">Контакты </a>
@@ -466,139 +466,14 @@
                 <div class="navigation">
                     <nav class="d-none d-md-block">
                         <ul>
-                            <li class="menu-item active dropdownbtn"><a href="javascript:void(0)" class="text-custom-white fw-600 dropdown-toggle">Home</a>
-                                <ul class="dropdown-menu">
-{{--                                    <li class="active"><a href="/" class="text-light-black">Landing Page</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-2.html" class="text-light-black">Homepage 2</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-3.html" class="text-light-black">Homepage 3</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-4.html" class="text-light-black">Homepage 4</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-5.html" class="text-light-black">Homepage 5</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-6.html" class="text-light-black">Homepage 6</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li><a href="homepage-7.html" class="text-light-black">Homepage 7</a>--}}
-{{--                                    </li>--}}
-                                </ul>
+                            <li class="menu-item active "><a href="/" class="text-custom-white fw-600 ">Главная</a>
                             </li>
-                            <li class="menu-item"><a href="in-media.html" class="text-custom-white fw-600">Media</a>
+                            <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Автомобили б/у</a>
                             </li>
-                            <li class="menu-item parent-megamenu"><a href="javascript:void(0)" class="text-custom-white fw-600 dropdown-toggle">Listing</a>
-                                <div class="megamenu">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="menu-style">
-                                                        <div class="menu-title">
-                                                            <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Listing</a></h6>
-                                                        </div>
-                                                        <ul>
-                                                            <li><a href="listing.html" class="text-dark-grey">Listing</a>
-                                                            </li>
-                                                            <li><a href="listing-1.html" class="text-dark-grey">Listing 1</a>
-                                                            </li>
-                                                            <li><a href="listing-2.html" class="text-dark-grey">Listing 2</a>
-                                                            </li>
-                                                            <li><a href="listing-3.html" class="text-dark-grey">Listing 3</a>
-                                                            </li>
-                                                            <li><a href="listing-4.html" class="text-dark-grey">Listing 4</a>
-                                                            </li>
-                                                            <li><a href="listing-1-style-2.html" class="text-dark-grey">Listing 1 Style 2</a>
-                                                            </li>
-                                                            <li><a href="listing-2-style-2.html" class="text-dark-grey">Listing 2 Style 2</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="menu-style">
-                                                        <div class="menu-title">
-                                                            <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Addon</a></h6>
-                                                        </div>
-                                                        <ul>
-                                                            <li><a href="add-listing.html" class="text-dark-grey">Add Listing</a>
-                                                            </li>
-                                                            <li><a href="about.html" class="text-dark-grey">About Us</a>
-                                                            </li>
-                                                            <li><a href="car-details.html" class="text-dark-grey">Car Details</a>
-                                                            </li>
-                                                            <li><a href="car-page.html" class="text-dark-grey">Car Page</a>
-                                                            </li>
-                                                            <li><a href="user-page.html" class="text-dark-grey">User</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="menu-style">
-                                                        <div class="menu-title">
-                                                            <h6 class="cat-name"><a href="javascript:void(0)" class="text-light-black">Extra Pages</a></h6>
-                                                        </div>
-                                                        <ul>
-                                                            <li><a href="register.html" class="text-dark-grey">Register</a>
-                                                            </li>
-                                                            <li><a href="login.html" class="text-dark-grey">Login</a>
-                                                            </li>
-                                                            <li><a href="invoice.html" class="text-dark-grey">Invoice</a>
-                                                            </li>
-                                                            <li><a href="404.html" class="text-dark-grey">404</a>
-                                                            </li>
-                                                            <li><a href="coming-soon.html" class="text-dark-grey">Coming Soon</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="menu-icon-box">
-                                                <div class="menu-box-inner">
-                                                    <div class="icon-box">
-                                                        <a href="contact.html">
-                                                            <img src="/images/nav/nav-5.jpg" class="img-fluid" alt="#">
-                                                        </a>
-                                                    </div>
-                                                    <div class="icon-wrapper">
-                                                        <h4 class="text-light-black mb-2 text-capitalize">Exterior Accessories</h4>
-                                                        <h6 class="text-dark-grey rubik text-capitalize">Custom Factory</h6>
-                                                        <a href="contact.html" class="btn-second orange-btn">Shop All</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Новые авто</a>
+                            </li> <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Новости</a>
                             </li>
-                            <li class="menu-item dropdownbtn"><a href="javascript:void(0)" class="text-custom-white fw-600 dropdown-toggle">Новости</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog.html" class="text-light-black">Blog Grid</a>
-                                    </li>
-                                    <li><a href="blog-left-sidebar.html" class="text-light-black">Blog Left Sidebar</a>
-                                    </li>
-                                    <li><a href="blog-right-sidebar.html" class="text-light-black">Blog Right Sidebar</a>
-                                    </li>
-                                    <li class="dropdownbtn"><a href="javascript:void(0)" class="text-light-black dropdown-toggle">Blog Single</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="blog-details.html" class="text-light-black">Standard</a>
-                                            </li>
-                                            <li><a href="blog-details-gallery.html" class="text-light-black">Gallery</a>
-                                            </li>
-                                            <li><a href="blog-details-video.html" class="text-light-black">Video</a>
-                                            </li>
-                                            <li><a href="blog-details-quote.html" class="text-light-black">Quote</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog-details-left.html" class="text-light-black">Blog Details Left</a>
-                                    </li>
-                                    <li><a href="blog-details-right.html" class="text-light-black">Blog Details Right</a>
-                                    </li>
-                                </ul>
-                            </li>
-{{--                            <li class="menu-item"><a href="pricing.html" class="text-custom-white fw-600">Pricing</a>--}}
-{{--                            </li>--}}
+
                             <li class="menu-item"><a href="contact.html" class="text-custom-white fw-600">Контакты</a>
                             </li>
                         </ul>

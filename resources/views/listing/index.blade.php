@@ -9,17 +9,17 @@
             <aside class="col-xl-3 col-lg-4">
                 <div class="side-search-bar h-auto mb-4">
                     <div class="title-icon">
-                        <h5 class="title"><i class="flaticon-search"></i> Find a Vehicle</h5>
+                        <h5 class="title"><i class="flaticon-search"></i> Поиск авто</h5>
                     </div>
                     <div class="widget-search-filter">
                         <div class="widget-content">
                             <form>
                                 <div class="form-group">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="What are you looking for?">
+                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Тип транспорта">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control form-control-custom">
-                                        <option>Filter By Category</option>
+                                        <option>Легковой</option>
                                         <option>Luxury Car</option>
                                         <option>Sports Car</option>
                                         <option>Vintage Car</option>
@@ -359,24 +359,12 @@
             </aside>
             <div class="col-xl-9 col-lg-8">
                 <div class="right-search-filter-box">
+                    <div>
+                        <h5 class="title2 no-margin">Поиск авто Легковые</h5>
+                    </div>
                     <div class="search-filter-options mb-0">
-                        <h5 class="title2 no-margin">Авто <small class="text-dark-white fw-400 rubik">Показано 1,565 результатов</small></h5>
                         <div class="result-show-by-cat">
                             <div class="filter-and-sorting">
-
-{{--                                <select>--}}
-{{--                                    <option>1</option>--}}
-{{--                                    <option>2</option>--}}
-{{--                                    <option>3</option>--}}
-{{--                                    <option>4</option>--}}
-{{--                                    <option>5</option>--}}
-{{--                                    <option>6</option>--}}
-{{--                                    <option>7</option>--}}
-{{--                                    <option>8</option>--}}
-{{--                                    <option>9</option>--}}
-{{--                                    <option>10</option>--}}
-{{--                                </select> <span>Go to: </span>--}}
-{{--                                <input type="text" name="#" value="1">  <span>1 - 10 of 171 </span>--}}
                                 <div class="arrow-btn">
                                     <ul class="pagination custom-pagination">
                                         {{$cars->links()}}
@@ -384,6 +372,7 @@
                                 </div>
                             </div>
                         </div>
+                        <small class="text-dark-white fw-400 rubik">Показано {{$cars->total()}} результатов</small>
                     </div>
                     <div class="right-section-car-box">
                         <div class="row">
@@ -392,10 +381,22 @@
                                     <div class="car-grid-layout-box">
                                         <div class="car-grid-layout-inner text-center">
                                             <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->core->mark->name}} {{$car->core->model->name}} </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
-{{--                                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>--}}
+                                            <p class="time-publication">
+                                                @if(((time()-strtotime($car->created_at))/3600) < 24)
+                                                    @if(((time()-strtotime($car->created_at))/3600) < 1)
+                                                        <span class="time-publication-green"><i class="far fa-clock"></i> {{(int)((time()-strtotime($car->created_at))/60)}} минут назад</span>
+                                                    @else
+                                                        <span class="time-publication-green"><i class="far fa-clock"></i> {{(int)((time()-strtotime($car->created_at))/3600)}} часов назад</span>
+                                                    @endif
+                                                @else
+                                                <i class="far fa-clock"></i> {{$car->created_at->format('d.m.Y')}}
+                                                @endif
+                                            </p>
                                             <p class="text-dark-grey">{{$car->core->modification}}</p> <span class="text-orange price-text">${{$car->price}}</span>
                                             <div class="car-grid-layout-img">
-                                                <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
+                                                <a href="/car/{{$car->id}}">
+                                                    <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
+                                                </a>
                                             </div>
                                             <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> {{$car->run}} Km</span>
                                                 <span class="text-dark-white p-relative"><i class="icon-car"></i> {{$car->year}}</span>
