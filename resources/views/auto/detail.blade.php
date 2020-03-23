@@ -103,7 +103,7 @@
         <div class="row no-use-row">
             <div class="col-lg-8">
                 <div class="page-title">
-                    <h3 class="text-light-black">{{$car->core->mark->name}} {{$car->core->model->name}}</h3>
+                    <h1 class="text-light-black">{{$car->core->mark->name}} {{$car->core->model->name}} {{$car->year}}</h1>
                 </div>
                 <div class="image-slider-sec">
                     <div class="car-detail-slider-for">

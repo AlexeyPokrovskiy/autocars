@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title',"AutoCar | Car Stock | Homepage Бренды Модели")
-@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
+@section('title',"AutoCar | Car Stock | Бренды Модели Страница №".$cars->currentPage())
+@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Cтраница №".$cars->currentPage()." Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
 @section('content')
 <!-- listing -->
 <div class="section-padding listing-with-map style-2">
@@ -414,6 +414,7 @@
 
                         </div>
                     </div>
+                    <h1 class="title2 no-margin">Поиск авто, страница #{{$cars->currentPage()}}</h1>
                 </div>
                 <div class="col-12">
                     <div class="map-container">
