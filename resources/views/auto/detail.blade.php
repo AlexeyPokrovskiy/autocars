@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('title',"AutoCar | Car Stock | – Продам ".$car->mark->name." ".$car->model->name." ".$car->year." ".$car->fuel->name." ".@$car->core->volume." ".@$car->core->body." бу в Украине, цена ".$car->price."$")
-@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Продаю Купить ".$car->mark->name." ".$car->model->name." ".$car->year." ".$car->fuel->name." ".@$car->core->volume." ".@$car->core->body." бу в Украине, цена ".$car->price."$ Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
+@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Продаю Купить ".$car->mark->name." ".$car->model->name." ".($car->city->title_ru?$car->region->title_ru." город ".$car->city->title_ru:"")." ".$car->year." ".$car->fuel->name." ".@$car->core->volume." ".@$car->core->body." бу в Украине, цена ".$car->price."$ Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
 @section('content')
+
 <!-- User Details -->
 {{--<div class="user-page-sec p-relative car-details">--}}
 {{--    <div class="car-details-slider">--}}
@@ -517,7 +518,7 @@
                                 <ul>
                                     <li class="text-dark-grey"> <span><i class="fas fa-map-marker-alt"></i></span>
                                         @if($car->city)
-                                            {{$car->region}}, {{$car->city}}
+                                            {{$car->region->title_ru}}, {{$car->city->title_ru}}
                                         @else
                                             Не указано
                                         @endif
