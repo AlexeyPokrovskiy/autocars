@@ -8,6 +8,8 @@ use App\Models\Ref\Mark as Mark;
 use App\Models\Ref\ModelCar as ModelCar;
 use App\Models\Ref\CoreRef as CoreRef;
 use App\Models\Ref\Fuel as Fuel;
+use App\Models\Ref\City as City;
+use App\Models\Ref\Region as Region;
 use App\Models\Auto\Auto as Auto;
 use App\Models\Auto\AutoFailed as AutoFailed;
 
@@ -21,14 +23,21 @@ class AutoRiaParser extends Model
 
     //Массив основных характеристик
     public $baseInfo;
+    //Регион и город
+    public $region;
+    //модель и марка
+    public $model;
+
 
     public function __construct($url)
     {
+
         $this->url = $url;
         $html = file_get_contents($this->url);
         $this->crawler = new Crawler(null, $this->url);
         $this->crawler->addHtmlContent($html, 'UTF-8');
         $this->baseInfo();
+        $this->getRegion();
 
     }
 
@@ -37,8 +46,10 @@ class AutoRiaParser extends Model
         $data = array(
             "type" => 1,
             "core_id" =>  $this->getBrand(),
-            "region_id" => 1,
-            "cities_id" => 1,
+            "mark_id" =>  $this->model['mark_id'],
+            "model_id" =>  $this->model['model_id'],
+            "region_id" => $this->region['region_id'],
+            "cities_id" => $this->region['city_id'],
             "price" => $this->baseInfo->offers->price,
             "phone" => $this->getPhone(),
             "platform_id" => 1,
@@ -62,6 +73,7 @@ class AutoRiaParser extends Model
         $this->createAuto($data);
         return $data;
     }
+
     public function createAuto($data){
         $auto = Auto::where('platform_url',$data['platform_url'])->first();
         $autoFailed = AutoFailed::where('platform_url',$data['platform_url'])->first();
@@ -77,9 +89,8 @@ class AutoRiaParser extends Model
 
             }
         }
-
-
     }
+
     public function baseInfo(){
         $result = $this->crawler->filter("script")->each(function (Crawler $node, $i) {
            $inner_text  = json_decode($node->text());
@@ -88,6 +99,51 @@ class AutoRiaParser extends Model
            }
         });
     }
+
+
+
+    public function getRegion(){
+        $result = trim($this->crawler->filter("#userInfoBlock ul .item_inner")->text());
+
+        $region_arr = array(
+            "city_id" => 0,
+            "region_id" => 0
+        );
+
+        if(strlen($result)){
+            $pos = strripos($result, "•");
+
+            if($pos  !== false){
+                $region_and_city = explode("•", $result);
+                $city = trim($region_and_city[0]); // город
+
+                $region =  trim(str_replace(".","",$region_and_city[1])); // регион
+                $region_ref = Region::where("title_ru","Like","%".$region."%")->first();
+
+
+                if($region_ref){
+                    $region_arr["region_id"] = $region_ref->region_id;
+                    $city_ref = City::where("title_ru","Like","%".$city."%")->where("region_id",$region_ref->region_id)->first();
+                    if($city_ref){
+                        $region_arr["city_id"] = $city_ref->city_id;
+                    }
+                }
+            }else{
+                $city_ref = City::where("title_ru","Like","%".$result."%")->first();
+                if($city_ref){
+                    $region_arr = array(
+                        "city_id" => $city_ref->city_id,
+                        "region_id" => $city_ref->region_id
+                    );
+                }
+            }
+
+        }
+
+        $this->region = $region_arr;
+    }
+
+
 
     public function getBrand(){
 
@@ -102,6 +158,14 @@ class AutoRiaParser extends Model
         $model = ModelCar::where("name","Like","%".explode(" ",$this->baseInfo->model)[0]."%")->first();
         $model_id = isset($model->id)?$model->id:0;
 
+        if(!$mark_id or !$model_id){
+            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
+        }
+        $this->model = array(
+            'model_id' => $model_id,
+            'mark_id' => $mark_id
+        );
+
             $core_id = CoreRef::where("mark_id",$mark_id)
                 ->where("model_id",$model_id)
                 ->where("body","LIKE","%".$body_type."%")
@@ -110,6 +174,7 @@ class AutoRiaParser extends Model
                 ->where("year_to",">=",$this->baseInfo->productionDate)
                 ->first();
 
+//        dump($core_id);
 //        dump($body_type);
 //        dump($volume);
 //        dump($this->baseInfo->productionDate);
@@ -117,9 +182,9 @@ class AutoRiaParser extends Model
 //        dd($model_id);
          $core_id = isset($core_id->id)?$core_id->id:0;
 
-        if(!$core_id){
-            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
-        }
+//        if(!$core_id){
+//            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
+//        }
 
 
 

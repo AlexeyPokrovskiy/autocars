@@ -380,7 +380,9 @@
                                 <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-12">
                                     <div class="car-grid-layout-box">
                                         <div class="car-grid-layout-inner text-center">
-                                            <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->core->mark->name}} {{$car->core->model->name}} </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+
+                                            <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->mark->name}} {{$car->model->name}} </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+
                                             <p class="time-publication">
                                                 @if(((time()-strtotime($car->created_at))/3600) < 24)
                                                     @if(((time()-strtotime($car->created_at))/3600) < 1)
@@ -392,21 +394,31 @@
                                                 <i class="far fa-clock"></i> {{$car->created_at->format('d.m.Y')}}
                                                 @endif
                                             </p>
-                                            <p class="text-dark-grey">{{$car->core->modification}}</p> <span class="text-orange price-text">${{$car->price}}</span>
+
+                                            <p class="text-dark-grey">{{isset($car->core->modification)?$car->core->modification:$car->year." год"}}</p> <span class="text-orange price-text">${{$car->price}}</span>
                                             <div class="car-grid-layout-img">
                                                 <a href="/car/{{$car->id}}">
                                                     <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
                                                 </a>
                                             </div>
+
                                             <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> {{$car->run}} Km</span>
                                                 <span class="text-dark-white p-relative"><i class="icon-car"></i> {{$car->year}}</span>
                                             </div>
-                                            <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> Украина</span>
-                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> {{$car->core->transmission}}</span>
+                                            <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>
+                                                    @if(isset($car->city->title_ru) and isset($car->region->title_ru))
+                                                       {{$car->city->title_ru}}
+                                                    @else
+                                                        Не указано
+                                                    @endif
+                                                </span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> {{isset($car->core->transmission)?$car->core->transmission:"Не указана"}}</span>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
+
                             @empty
                                 <h2>Пусто</h2>
                             @endforelse

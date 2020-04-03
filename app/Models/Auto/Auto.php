@@ -21,6 +21,8 @@ class Auto extends Model
     protected $fillable = [
         "type",
         "core_id",
+        "mark_id",
+        "model_id",
         "region_id",
         "cities_id",
         "price",
@@ -78,17 +80,17 @@ class Auto extends Model
      */
     public function model()
     {
-        return $this->hasManyThrough('App\Models\Ref\ModelCar', 'App\Models\Ref\CoreRef',"model_id","id");
+        return $this->belongsTo('App\Models\Ref\ModelCar', 'mark_id', 'id');
     }
 
     /**
-     * Марка АВТО через промежуточные
+     * Марка АВТО
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function mark()
     {
-        return $this->hasManyThrough('App\Models\Ref\Mark', 'App\Models\Ref\CoreRef',"mark_id","id");
+        return $this->belongsTo('App\Models\Ref\Mark', 'mark_id', 'id');
     }
 
     /**
@@ -128,7 +130,7 @@ class Auto extends Model
      */
     public function city()
     {
-        return $this->belongsTo('App\Models\Ref\City', 'cities_id', 'id');
+        return $this->belongsTo('App\Models\Ref\City', 'cities_id', 'city_id');
     }
 
     /**
@@ -138,7 +140,7 @@ class Auto extends Model
      */
     public function region()
     {
-        return $this->belongsTo('App\Models\Ref\Region', 'region_id', 'id');
+        return $this->belongsTo('App\Models\Ref\Region', 'region_id', 'region_id');
     }
 
     /**

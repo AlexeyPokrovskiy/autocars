@@ -10,7 +10,7 @@ class ListingController extends Controller
 {
     public function index(){
 
-        $cars = Auto::with('core','fuel','status','model')->orderBy("created_at","desc")->paginate(20);
+        $cars = Auto::with('region','city','core','fuel','status','model')->orderBy("created_at","desc")->paginate(20);
 
         return view('listing.index',[
             'cars'=>$cars,

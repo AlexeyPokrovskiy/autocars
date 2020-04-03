@@ -21,6 +21,8 @@ class AutoFailed extends Model
     protected $fillable = [
         "type",
         "core_id",
+        "mark_id",
+        "model_id",
         "region_id",
         "cities_id",
         "price",

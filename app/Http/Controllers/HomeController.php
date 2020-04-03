@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     public function test(){
 //        \App\Jobs\ParseAvito::dispatch("TEST");
-    $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_mitsubishi_colt_26559092.html");
+    $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_nissan_qashqai_26390558.html");
     $parser->runParse();
 
 

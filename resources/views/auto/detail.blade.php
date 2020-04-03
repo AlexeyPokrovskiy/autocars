@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title',"AutoCar | Car Stock | – Продам ".$car->core->mark->name." ".$car->core->model->name." ".$car->year." ".$car->fuel->name." ".$car->core->volume." ".$car->core->body." бу в Украине, цена ".$car->price."$")
-@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Продаю Купить ".$car->core->mark->name." ".$car->core->model->name." ".$car->year." ".$car->fuel->name." ".$car->core->volume." ".$car->core->body." бу в Украине, цена ".$car->price."$ Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
+@section('title',"AutoCar | Car Stock | – Продам ".$car->mark->name." ".$car->model->name." ".$car->year." ".$car->fuel->name." ".@$car->core->volume." ".@$car->core->body." бу в Украине, цена ".$car->price."$")
+@section('meta_description',"CARSTOCK.COM.UA — купить новые и б/у автомобилей. Продаю Купить ".$car->mark->name." ".$car->model->name." ".$car->year." ".$car->fuel->name." ".@$car->core->volume." ".@$car->core->body." бу в Украине, цена ".$car->price."$ Авторынок онлайн. Автобазар, крупнейший в Украине, все обьявления. Обьявления продажи авто. Каталоги автомобилей и продавцов на карсток.")
 @section('content')
 <!-- User Details -->
 {{--<div class="user-page-sec p-relative car-details">--}}
@@ -103,7 +103,7 @@
         <div class="row no-use-row">
             <div class="col-lg-8">
                 <div class="page-title">
-                    <h1 class="text-light-black">{{$car->core->mark->name}} {{$car->core->model->name}} {{$car->year}}</h1>
+                    <h1 class="text-light-black">{{$car->mark->name}} {{$car->model->name}} {{$car->year}}</h1>
                 </div>
                 <div class="image-slider-sec">
                     <div class="car-detail-slider-for">
@@ -128,8 +128,8 @@
                         </li>
                         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Опции</a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#performance">Performance</a>
-                        </li>
+{{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#performance">Performance</a>--}}
+{{--                        </li>--}}
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tech-spec">
@@ -169,23 +169,23 @@
                                         <tbody>
                                         <tr>
                                             <td>Двигатель</td>
-                                            <td>{{$car->core->modification}}</td>
+                                            <td>{{@$car->core->modification}}</td>
                                         </tr>
                                         <tr>
                                             <td>Мощность</td>
-                                            <td>{{$car->core->horse_power}} л.с. ({{$car->core->kwt}} KW)</td>
+                                            <td>{{@$car->core->horse_power}} л.с. ({{@$car->core->kwt}} KW)</td>
                                         </tr>
                                         <tr>
                                             <td>Привод</td>
-                                            <td>{{$car->core->drive}}</td>
+                                            <td>{{@$car->core->drive}}</td>
                                         </tr>
                                         <tr>
                                             <td>Дверей</td>
-                                            <td>{{$car->core->doors_count}}</td>
+                                            <td>{{@$car->core->doors_count}}</td>
                                         </tr>
                                         <tr>
                                             <td>КПП</td>
-                                            <td>{{$car->core->transmission}}</td>
+                                            <td>{{@$car->core->transmission}}</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -516,15 +516,24 @@
                             <div class="contact-details">
                                 <ul>
                                     <li class="text-dark-grey"> <span><i class="fas fa-map-marker-alt"></i></span>
-                                        Украина</li>
+                                        @if($car->city)
+                                            {{$car->region}}, {{$car->city}}
+                                        @else
+                                            Не указано
+                                        @endif
+                                    </li>
                                     <li class="text-dark-grey"> <span><i class="fas fa-phone-alt"></i></span>
                                         <a href="#" class="text-dark-grey">{{$car->phone}}</a>
+                                    </li>
+                                    <li class="text-dark-grey"> <span><i class="fas fa-dollar-sign"></i></span>
+                                        <a href="#" class="text-dark-grey" >{{$car->price}}</a>
                                     </li>
 {{--                                    <li class="text-dark-grey"> <span><i class="fas fa-envelope"></i></span>--}}
 {{--                                        <a href="#" class="text-dark-grey">information@domain.com</a>--}}
 {{--                                    </li>--}}
                                 </ul>
                             </div>
+
 {{--                            <div class="social-media">--}}
 {{--                                <ul>--}}
 {{--                                    <li><a href="#" class="text-orange"><i class="fab fa-facebook-f"></i></a>--}}
@@ -585,7 +594,7 @@
                                 <!--./ todo-thumbnail-area -->
                                 <div class="content-entry-wrap">
                                     <div class="recent-content">
-                                        <h6 class="title"><a href="/car/{{$car_sim->id}}" class=" text-light-black">{{$car_sim->core->model->name}} {{$car_sim->core->mark->name}}</a></h6>
+                                        <h6 class="title"><a href="/car/{{$car_sim->id}}" class=" text-light-black">{{$car_sim->model->name}} {{$car_sim->mark->name}}</a></h6>
                                         <div class="recent-rating">
                                             <div class="rating-value"> <span>${{$car_sim->price}}</span></div>
                                         </div>
