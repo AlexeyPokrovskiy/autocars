@@ -9,9 +9,6 @@ use Symfony\Component\DomCrawler\Crawler;
 class HomeController extends Controller
 {
     public function index(){
-
-        $brands = Auto::with('mark')->groupBy("mark_id")->get();
-        dd($brands);
         return view('home.home');
     }
 
