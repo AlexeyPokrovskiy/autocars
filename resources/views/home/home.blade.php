@@ -525,116 +525,75 @@
 <section class="car-browse-make-type-sec">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="car-browse-make-type">
-                    <h4 class="text-light-black">Browse by <span class="text-orange">Category</span> <small><a href="javascript:void(0)" class="text-dark-grey fs-14 rubik showmakebtn">Show all Categories</a> </small></h4>
+                    <h4 class="text-light-black">Искать по марке <span class="text-orange">Category</span> <small><a href="javascript:void(0)" class="text-dark-grey fs-14 rubik showmakebtn">Показать все модели</a> </small></h4>
                     <ul class="make">
                         <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-1.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                BMW (2)</a>
+                            <a href="/listing/brand/" class="text-light-black">
+                                <span>
+                          </span>
+                                </a>
                         </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-2.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Chevrolet (4)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-3.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Ford (4)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-4.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Honda (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-5.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Lexus (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-6.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Mazda (3)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-7.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Nissan (3)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/logos/80x55/category-8.png" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Toyota (3)</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="car-browse-make-type">
-                    <h4 class="text-light-black">Browse by <span class="text-orange">Type</span> <small><a href="javascript:void(0)" class="text-dark-grey fs-14 rubik showtypebtn">Show all Types</a> </small></h4>
-                    <ul class="type">
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car1.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Convertible (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car1.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Coupe (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car2.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Hatchback (1)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car3.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Minivan (1)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car4.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Pickups (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car5.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Sedan (12)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car6.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                Sport Cars (2)</a>
-                        </li>
-                        <li>
-                            <a href="index.html#" class="text-light-black"> <span>
-                    <img src="/images/car2.jpg" class="img-fluid" alt="brand-logo">
-                  </span>
-                                SUV (1)</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+{{--            <div class="col-lg-6">--}}
+{{--                <div class="car-browse-make-type">--}}
+{{--                    <h4 class="text-light-black">Browse by <span class="text-orange">Type</span> <small><a href="javascript:void(0)" class="text-dark-grey fs-14 rubik showtypebtn">Show all Types</a> </small></h4>--}}
+{{--                    <ul class="type">--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car1.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Convertible (2)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car1.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Coupe (2)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car2.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Hatchback (1)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car3.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Minivan (1)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car4.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Pickups (2)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car5.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Sedan (12)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car6.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                Sport Cars (2)</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="index.html#" class="text-light-black"> <span>--}}
+{{--                    <img src="/images/car2.jpg" class="img-fluid" alt="brand-logo">--}}
+{{--                  </span>--}}
+{{--                                SUV (1)</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </div>
 </section>

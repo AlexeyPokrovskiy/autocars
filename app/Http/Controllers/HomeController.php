@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Auto\Auto;
 use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
 class HomeController extends Controller
 {
     public function index(){
+
+        $brands = Auto::with('mark')->groupBy("mark_id")->get();
+        dd($brands);
         return view('home.home');
     }
 
     public function test(){
 //        \App\Jobs\ParseAvito::dispatch("TEST");
-    $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_bmw_316_26538604.html");
+    $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_loncin_lx_250gs_2a_26741793.html");
     $parser->runParse();
 
 

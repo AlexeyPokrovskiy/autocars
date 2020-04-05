@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Auto\Auto;
 
 use App\Models\Ref\CoreRef;
+use App\Models\Ref\Mark;
 use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -31,6 +32,7 @@ class CarController extends Controller
             'car_similar'=>$car_similar
         ]);
     }
+
 
 
 }

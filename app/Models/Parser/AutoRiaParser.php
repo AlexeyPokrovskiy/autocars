@@ -166,6 +166,7 @@ class AutoRiaParser extends Model
         if(!$mark_id or !$model_id){
             $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
         }
+
         $this->model = array(
             'model_id' => $model_id,
             'mark_id' => $mark_id
@@ -265,7 +266,7 @@ class AutoRiaParser extends Model
         }
 
         if(!$volume){
-            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
+            return 0;
         }
 
         return $volume;

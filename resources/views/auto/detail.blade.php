@@ -580,6 +580,7 @@
                 <div class="side-search-bar h-auto mb-4">
                     <div class="title-icon">
                         <h5 class="title"><i class="flaticon-eye"></i> Похожие</h5>
+                        <p><a href="/listing/brand/{{$car->mark->code}}">Посмотреть другие {{$car->mark->name}} -></a></p>
                     </div>
                     <div class="widget-search-filter">
                         <div class="widget-content">
