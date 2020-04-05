@@ -69,8 +69,8 @@ class AutoRiaParser extends Model
             "wheel" => 1,
         );
 
-
         $this->createAuto($data);
+
         return $data;
     }
 
@@ -103,12 +103,17 @@ class AutoRiaParser extends Model
 
 
     public function getRegion(){
-        $result = trim($this->crawler->filter("#userInfoBlock ul .item_inner")->text());
-
         $region_arr = array(
             "city_id" => 0,
             "region_id" => 0
         );
+
+        try {
+            $result = trim($this->crawler->filter("#userInfoBlock ul .item_inner")->text());
+        }catch(Exception $e) {
+            $this->region = $region_arr;
+            $result = "";
+        }
 
         if(strlen($result)){
             $pos = strripos($result, "•");

@@ -20,7 +20,7 @@ class CarController extends Controller
         $images = json_decode($car->images);
 
 //похожие авто
-        $car_similar = Auto::with('core')->where('core_id',$car->core_id)->where('id',"!=",$car->id)->get();
+        $car_similar = Auto::with('core')->where('model_id',$car->model_id)->where('id',"!=",$car->id)->get();
 
 
 

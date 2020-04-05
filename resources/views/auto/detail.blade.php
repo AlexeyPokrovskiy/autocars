@@ -517,7 +517,7 @@
                             <div class="contact-details">
                                 <ul>
                                     <li class="text-dark-grey"> <span><i class="fas fa-map-marker-alt"></i></span>
-                                        @if($car->city)
+                                        @if(isset($car->city))
                                             {{$car->region->title_ru}}, {{$car->city->title_ru}}
                                         @else
                                             Не указано
