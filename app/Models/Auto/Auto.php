@@ -80,7 +80,7 @@ class Auto extends Model
      */
     public function model()
     {
-        return $this->belongsTo('App\Models\Ref\ModelCar', 'mark_id', 'id');
+        return $this->belongsTo('App\Models\Ref\ModelCar', 'model_id', 'id');
     }
 
     /**
