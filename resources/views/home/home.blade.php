@@ -525,7 +525,7 @@
                         </li>
                         @endforeach
                     </ul>
-                    <div class="col-lg-12 text-center pb-3">
+                    <div class="text-center pb-3">
                         <a href="javascript:void(0)" class="text-dark-grey fs-14 rubik show-all-category">Показать все модели</a>
                     </div>
                 </div>
