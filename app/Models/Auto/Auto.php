@@ -63,6 +63,20 @@ class Auto extends Model
         'run' => 'integer',
     ];
 
+
+
+
+    public function scopeLastAuto($query,$limit = 5){
+        return $query->with('region','city','core','fuel','status','model')->orderBy("created_at","desc")->limit($limit);
+    }
+
+
+
+
+
+
+
+
     /**
      * Информация основного справочника для данного автомобиля
      *

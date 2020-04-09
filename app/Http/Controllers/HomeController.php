@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Auto\Auto;
+use App\Models\Ref\Mark;
 use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('home.home');
+        $cars = Auto::LastAuto(6)->get();
+        $marks = Mark::orderBy("is_popular","desc")->get();
+
+        return view('home.home',[
+            'cars'=>$cars,
+            'marks'=>$marks
+        ]);
+
+
     }
 
     public function test(){

@@ -186,13 +186,7 @@ class AutoRiaParser extends Model
 //        dump($this->baseInfo->productionDate);
 //        dump($mark_id);
 //        dd($model_id);
-         $core_id = isset($core_id->id)?$core_id->id:0;
-
-//        if(!$core_id){
-//            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
-//        }
-
-
+        $core_id = isset($core_id->id)?$core_id->id:0;
 
         return $core_id;
 

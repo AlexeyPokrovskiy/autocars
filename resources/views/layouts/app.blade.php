@@ -506,20 +506,20 @@
                             <div class="footer-box ft-space-col">
                                 <div class="ft-logo">
                                     <a href="index.html">
-                                        <img src="/images/120x50logo.jpg" class="img-fluid" alt="Logo">
+                                        <img src="/images/favicon.png" style="height: 50px;" class="img-fluid" alt="Logo">
                                     </a>
                                 </div>
-                                <p class="text-dark-white ">It is a long establishment fact that a reader will be the distracted by the readable content of a page.</p>
-                                <div class="space-20"></div>
-                                <label class="text-custom-white fw-600 ">Address:</label>
-                                <p class="text-dark-white ">45 Grand Central Terminal New York
-                                    <br>NY 1245, United State USA</p>
-                                <label class="text-custom-white fw-600 ">Email:</label>
-                                <p><a href="mailto:" class="text-dark-white ">Support@demosite.com</a>
-                                </p>
-                                <label class="text-custom-white fw-600 ">Phone:</label>
-                                <p><a href="tel:" class="text-dark-white ">+123 4567 8910</a>
-                                </p>
+                                <p class="text-dark-white ">Car-stock — наиболее крупный авто базар Украины среди всех отечественных сайтов подобного рода. В намерении помочь как покупателям транспортных средств, так и желающим их продать, мы разработали удобный и масштабный ресурс, представленный в виде доски онлайн-объявлений.</p>
+{{--                                <div class="space-20"></div>--}}
+{{--                                <label class="text-custom-white fw-600 ">Address:</label>--}}
+{{--                                <p class="text-dark-white ">45 Grand Central Terminal New York--}}
+{{--                                    <br>NY 1245, United State USA</p>--}}
+{{--                                <label class="text-custom-white fw-600 ">Email:</label>--}}
+{{--                                <p><a href="mailto:" class="text-dark-white ">Support@demosite.com</a>--}}
+{{--                                </p>--}}
+{{--                                <label class="text-custom-white fw-600 ">Phone:</label>--}}
+{{--                                <p><a href="tel:" class="text-dark-white ">+123 4567 8910</a>--}}
+{{--                                </p>--}}
                             </div>
                         </div>
                         <div class="offset-xl-1 col-xl-4 offset-lg-1 col-lg-4 col-md-6 col-sm-4">
@@ -591,7 +591,7 @@
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12  align-self-center"> <a href="index.html#" class="text-custom-white ">© Slidesigma - 2019 | All Right Reserved</a>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12  align-self-center"> <a href="index.html#" class="text-custom-white ">© Car-stock - 2020 | All Right Reserved</a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="social-icons text-center">

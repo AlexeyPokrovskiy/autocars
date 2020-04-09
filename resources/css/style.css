@@ -2949,7 +2949,7 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
     width: 25%;
     display: inline-block;
     vertical-align: top;
-    margin-bottom: 25px;
+    /*margin-bottom: 25px;*/
     max-height: 300px;
     overflow: hidden;
     text-align: center;
@@ -8599,4 +8599,8 @@ header#menu-style-4 .desk-menu .menu-container .menu > li.menu-item-has-children
 .page-item.active .page-link{
     background-color: #000000;
     border-color: #000000;
+}
+.all-categories-hide{
+    height: 100px;
+    overflow: hidden;
 }

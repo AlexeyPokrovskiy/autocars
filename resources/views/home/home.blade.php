@@ -453,69 +453,56 @@
             <div class="col-md-12">
                 <div class="section-header">
                     <div class="text-wrapper text-center">
-                        <h3 class="fw-500 no-margin">Discover Our Featured Models</h3>
+                        <h3 class="fw-500 no-margin">Новинки</h3>
                         <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>
-                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>
+                        <p class="text-dark-grey">Самый свежий подбор авто специально для Вас.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="right-section-car-box">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid-layout-box">
-                        <div class="car-grid-layout-inner text-center">
-                            <h5 class="car-name"><a href="index.html#"  class="text-light-black">Acura TLX </a><span class="text-orange float-right custom-tooltip" data-tip="Add to compare"><i class="flaticon-add"></i></span></h5>
-                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$25,000</span>
-                            <div class="car-grid-layout-img">
-                                <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car img">
-                            </div>
-                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 22,000 Km</span>
-                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2012 Model</span>
-                            </div>
-                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> New York</span>
-                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid-layout-box">
-                        <div class="car-grid-layout-inner text-center">
-                            <h5 class="car-name"><a href="index.html#"  class="text-light-black">BMW 4 Series </a><span class="text-orange float-right custom-tooltip" data-tip="Add to compare"><i class="flaticon-add"></i></span></h5>
-                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$20,000</span>
-                            <div class="car-grid-layout-img">
-                                <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car img">
-                            </div>
-                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 40,000 Km</span>
-                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2008 Model</span>
-                            </div>
-                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> London</span>
-                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Manual</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid-layout-box">
-                        <div class="car-grid-layout-inner text-center">
-                            <h5 class="car-name"><a href="index.html#"  class="text-light-black">Audi A4 </a><span class="text-orange float-right custom-tooltip" data-tip="Add to compare"><i class="flaticon-add"></i></span></h5>
-                            <h6 class="text-light-black text-uppercase mb-2">YOU'RE NOT LIKE EVERYONE ELSE</h6>
-                            <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort.</p> <span class="text-orange price-text">$30,000</span>
-                            <div class="car-grid-layout-img">
-                                <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car img">
-                            </div>
-                            <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> 15,000 Km</span>
-                                <span class="text-dark-white p-relative"><i class="icon-car"></i> 2014 Model</span>
-                            </div>
-                            <div class="car-grid-layout-location"> <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i> Germany</span>
-                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> Automatic</span>
+                @foreach($cars as $car)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="car-grid-layout-box">
+                            <div class="car-grid-layout-inner text-center">
+                                <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->mark->name}} {{$car->model->name}} </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                <p class="time-publication">
+                                    @if(((time()-strtotime($car->created_at))/3600) < 24)
+                                        @if(((time()-strtotime($car->created_at))/3600) < 1)
+                                            <span class="time-publication-green"><i class="far fa-clock"></i> {{(int)((time()-strtotime($car->created_at))/60)}} минут назад</span>
+                                        @else
+                                            <span class="time-publication-green"><i class="far fa-clock"></i> {{(int)((time()-strtotime($car->created_at))/3600)}} часов назад</span>
+                                        @endif
+                                    @else
+                                        <i class="far fa-clock"></i> {{$car->created_at->format('d.m.Y')}}
+                                    @endif
+                                </p>
+
+                                <p class="text-dark-grey">{{isset($car->core->modification)?$car->core->modification:$car->year." год"}}</p> <span class="text-orange price-text">${{$car->price}}</span>
+                                <div class="car-grid-layout-img">
+                                    <a href="/car/{{$car->id}}">
+                                        <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
+                                    </a>
+                                </div>
+
+                                <div class="car-grid-layout-details"> <span class="text-dark-white"><i class="flaticon-dashboard text-orange mr-2"></i> {{$car->run}} Km</span>
+                                    <span class="text-dark-white p-relative"><i class="icon-car"></i> {{$car->year}}</span>
+                                </div>
+                                <div class="car-grid-layout-location">  <span class="text-dark-white"><i class="fas fa-map-marker-alt mr-2"></i>
+                                                    @if(isset($car->city->title_ru) and isset($car->region->title_ru))
+                                            {{$car->city->title_ru}}
+                                        @else
+                                            Не указано
+                                        @endif
+                                                </span>
+                                    <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> {{isset($car->core->transmission)?$car->core->transmission:"Не указана"}}</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -527,16 +514,20 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="car-browse-make-type">
-                    <h4 class="text-light-black">Искать по марке <span class="text-orange">Category</span> <small><a href="javascript:void(0)" class="text-dark-grey fs-14 rubik showmakebtn">Показать все модели</a> </small></h4>
-                    <ul class="make">
+                    <h4 class="text-light-black text-center">Искать по марке <span class="text-orange"></span></h4>
+                    <ul class="make all-categories all-categories-hide">
+                        @foreach($marks as $mark)
                         <li>
-                            <a href="/listing/brand/" class="text-light-black">
-                                <span>
-                          </span>
+                            <a href="/listing/brand/{{$mark->code}}" class="text-light-black">
+                                <span>{{$mark->name}}
+                              </span>
                                 </a>
                         </li>
-
+                        @endforeach
                     </ul>
+                    <div class="col-lg-12 text-center pb-3">
+                        <a href="javascript:void(0)" class="text-dark-grey fs-14 rubik show-all-category">Показать все модели</a>
+                    </div>
                 </div>
             </div>
 {{--            <div class="col-lg-6">--}}
@@ -599,509 +590,509 @@
 </section>
 <!-- Car browse -->
 <!-- About -->
-<section class="section-padding about-us-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="about-img-sec p-relative">
-                    <img src="/images/aboutus-.jpg" class="img-fluid full-width" alt="about-img">
-                </div>
-            </div>
-            <div class="col-lg-7 align-self-center">
-                <div class="about-content-wrapper">
-                    <div class="section-header no-margin">
-                        <div class="text-wrapper text-left">
-                            <h6 class="text-orange fw-400 mb-2">ABOUT THE CARVELLEY</h6>
-                            <h3 class="fw-500 no-margin">WE ARE THE BEST CAR SERVICE PROVIDE IN THE WORLD OF AUTOMOTIVE</h3>
-                            <h3 class="fw-500 no-margin">WE ARE THE BEST CAR SERVICE PROVIDE IN THE WORLD OF AUTOMOTIVE</h3>
-                            <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>
-                        </div>
-                    </div>
-                    <p class="text-dark-grey">On the other hand, we denounce with righteous indignation the foult anuals dislike men who are so beguiled and demoralized by the nuhaiicharms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound toen sue; and equal blame belongs to those who fail in their duty.</p>
-                    <ul>
-                        <li class="text-dark-grey">Lorem ipsum dolor sit amet.</li>
-                        <li class="text-dark-grey">Ut enim ad minim veniam.</li>
-                        <li class="text-dark-grey">Duis aute irure dolor in reprehenderit.</li>
-                        <li class="text-dark-grey">Excepteur sint occaecat cupidatat non proident.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="section-padding about-us-sec">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-5">--}}
+{{--                <div class="about-img-sec p-relative">--}}
+{{--                    <img src="/images/aboutus-.jpg" class="img-fluid full-width" alt="about-img">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-7 align-self-center">--}}
+{{--                <div class="about-content-wrapper">--}}
+{{--                    <div class="section-header no-margin">--}}
+{{--                        <div class="text-wrapper text-left">--}}
+{{--                            <h6 class="text-orange fw-400 mb-2">ABOUT THE CARVELLEY</h6>--}}
+{{--                            <h3 class="fw-500 no-margin">WE ARE THE BEST CAR SERVICE PROVIDE IN THE WORLD OF AUTOMOTIVE</h3>--}}
+{{--                            <h3 class="fw-500 no-margin">WE ARE THE BEST CAR SERVICE PROVIDE IN THE WORLD OF AUTOMOTIVE</h3>--}}
+{{--                            <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <p class="text-dark-grey">On the other hand, we denounce with righteous indignation the foult anuals dislike men who are so beguiled and demoralized by the nuhaiicharms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound toen sue; and equal blame belongs to those who fail in their duty.</p>--}}
+{{--                    <ul>--}}
+{{--                        <li class="text-dark-grey">Lorem ipsum dolor sit amet.</li>--}}
+{{--                        <li class="text-dark-grey">Ut enim ad minim veniam.</li>--}}
+{{--                        <li class="text-dark-grey">Duis aute irure dolor in reprehenderit.</li>--}}
+{{--                        <li class="text-dark-grey">Excepteur sint occaecat cupidatat non proident.</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- About -->
 <!-- Featured Brands -->
-<section class="section-padding bg-light-theme">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-header">
-                    <div class="text-wrapper text-center">
-                        <h3 class="fw-500 no-margin">Featured Brands</h3>
-                        <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>
-                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Car Tabs -->
-                <div class="car-tabs">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="index.html#ghibli">Ghibli</a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#levante">Levante</a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#quattroporte">Quattroporte</a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#granturismo">GranTurismo</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Car Tabs -->
-                <!-- Car Tabs Contant -->
-                <div class="car-tab-box">
-                    <div class="tab-content">
-                        <div id="ghibli" class="container tab-pane active">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Ghibli</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Ghibli S</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">5979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">4.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">550 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Ghibli S Q4</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description ">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V8</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2639 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">6.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">450 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="levante" class="container tab-pane fade">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Levante</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Levante S</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Levante 250 Diesel</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="quattroporte" class="container tab-pane fade">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Quattroporte</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Quattroporte S</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Quattroporte S Q4</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="granturismo" class="container tab-pane fade">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Granturismo</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Granturismo MC</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="car-box align-item-center">
-                                        <h4><a href="index.html#" class="text-light-black">Granturismo Sport</a></h4>
-                                        <span class="tag">2019</span>
-                                        <a href="index.html#">
-                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">
-                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>
-                                    </div>
-                                    <div class="car-description">
-                                        <ul>
-                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>
-                                            </li>
-                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Car Tabs Contant -->
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="section-padding bg-light-theme">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="section-header">--}}
+{{--                    <div class="text-wrapper text-center">--}}
+{{--                        <h3 class="fw-500 no-margin">Featured Brands</h3>--}}
+{{--                        <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>--}}
+{{--                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <!-- Car Tabs -->--}}
+{{--                <div class="car-tabs">--}}
+{{--                    <ul class="nav nav-tabs" role="tablist">--}}
+{{--                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="index.html#ghibli">Ghibli</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#levante">Levante</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#quattroporte">Quattroporte</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="index.html#granturismo">GranTurismo</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--                <!-- Car Tabs -->--}}
+{{--                <!-- Car Tabs Contant -->--}}
+{{--                <div class="car-tab-box">--}}
+{{--                    <div class="tab-content">--}}
+{{--                        <div id="ghibli" class="container tab-pane active">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Ghibli</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Ghibli S</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">5979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">4.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">550 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Ghibli S Q4</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description ">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V8</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2639 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">6.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">450 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div id="levante" class="container tab-pane fade">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Levante</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Levante S</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Levante 250 Diesel</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div id="quattroporte" class="container tab-pane fade">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Quattroporte</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Quattroporte S</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Quattroporte S Q4</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div id="granturismo" class="container tab-pane fade">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Granturismo</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar9.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6 car-border">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Granturismo MC</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar8.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-lg-4 col-md-6">--}}
+{{--                                    <div class="car-box align-item-center">--}}
+{{--                                        <h4><a href="index.html#" class="text-light-black">Granturismo Sport</a></h4>--}}
+{{--                                        <span class="tag">2019</span>--}}
+{{--                                        <a href="index.html#">--}}
+{{--                                            <img src="/images/showcar7.jpg" class="img-fluid full-width" alt="Car Model Image">--}}
+{{--                                        </a> <a href="index.html#" class="btn-third transparent-btn"><span>$ 22,000</span><span>Booking Now</span></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="car-description">--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="text-dark-grey">Engine Layout <strong class="text-light-black">V6</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Displacement <strong class="text-light-black">2979 cc</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Acceleration <strong class="text-light-black">5.5 sec</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Speed <strong class="text-light-black">270 km/h</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Max Power <strong class="text-light-black">350 HP</strong>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="text-dark-grey">Traction <strong class="text-light-black">RWD</strong>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!-- Car Tabs Contant -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- Featured Brands -->
 <!-- parallex sec-->
-<section class="about-theme">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-padding">
-                    <div class="about-text-wrapper">
-                        <p class="text-custom-white sub-title">OUR MAIN GOAL -</p>
-                        <h2 class="text-custom-white title">The Best Theme for <span class="text-orange">Car Listing</span></h2>
-                        <div class="video-btn">
-                            <a href="JavaScript:Void(0);" data-toggle="modal" data-target="#videomodal">
-                                <div class="circle-box"> <span class="video-btn">
-                        <i class="flaticon-triangle"></i>
-                      </span>
-                                </div> <span class="text text-custom-white">Watch intro video <br>About theme</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="about-theme">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-12">--}}
+{{--                <div class="section-padding">--}}
+{{--                    <div class="about-text-wrapper">--}}
+{{--                        <p class="text-custom-white sub-title">OUR MAIN GOAL -</p>--}}
+{{--                        <h2 class="text-custom-white title">The Best Theme for <span class="text-orange">Car Listing</span></h2>--}}
+{{--                        <div class="video-btn">--}}
+{{--                            <a href="JavaScript:Void(0);" data-toggle="modal" data-target="#videomodal">--}}
+{{--                                <div class="circle-box"> <span class="video-btn">--}}
+{{--                        <i class="flaticon-triangle"></i>--}}
+{{--                      </span>--}}
+{{--                                </div> <span class="text text-custom-white">Watch intro video <br>About theme</span>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- parallex sec-->
 <!-- Car Categories -->
-<section class="section-padding car-categories-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-header">
-                    <div class="text-wrapper text-center">
-                        <h3 class="fw-500 no-margin">Find Your Best Match</h3>
-                        <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>
-                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-relative">
-                <div class="category-slider">
-                    <div class="car-categories">
-                        <a href="index.html#">
-                            <img src="/images/match/match-1.jpg" class="img-fluid full-width" alt="Category Image" />
-                        </a>
-                        <div class="category-caption">
-                            <div class="category-wrapper">
-                                <a href="index.html#">
-                                    <h4 class="text-custom-white">Practice <span class="brand-logo">
-                      <img src="/images/bmw_logo.png" class="img-fluid" alt="brand logo">
-                    </span></h4>
-                                </a>
-                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="car-categories">
-                        <a href="index.html#">
-                            <img src="/images/match/match-2.jpg" class="img-fluid full-width" alt="Category Image" />
-                        </a>
-                        <div class="category-caption">
-                            <div class="category-wrapper">
-                                <a href="index.html#">
-                                    <h4 class="text-custom-white">Sports Car
-                                        <span class="brand-logo">
-                      <img src="/images/wv_logo.png" class="img-fluid" alt="brand logo">
-                    </span></h4>
-                                </a>
-                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="car-categories">
-                        <a href="index.html#">
-                            <img src="/images/match/match-3.jpg" class="img-fluid full-width" alt="Category Image" />
-                        </a>
-                        <div class="category-caption">
-                            <div class="category-wrapper">
-                                <a href="index.html#">
-                                    <h4 class="text-custom-white">Luxury
-                                        <span class="brand-logo">
-                      <img src="/images/bmw_logo.png" class="img-fluid" alt="brand logo">
-                    </span></h4>
-                                </a>
-                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="car-categories">
-                        <a href="index.html#">
-                            <img src="/images/match/match-4.jpg" class="img-fluid full-width" alt="Category Image" />
-                        </a>
-                        <div class="category-caption">
-                            <div class="category-wrapper">
-                                <a href="index.html#">
-                                    <h4 class="text-custom-white">Fmaily Car
-                                        <span class="brand-logo">
-                      <img src="/images/wv_logo.png" class="img-fluid" alt="brand logo">
-                    </span></h4>
-                                </a>
-                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category-slider-arrows">
-                    <div class="category-slider-prevtab slick-arrow" style=""> <i class="flaticon-left-chevron"></i>
-                    </div>
-                    <div class="category-slider-nexttab slick-arrow" style=""> <i class="flaticon-right-chevron"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="section-padding car-categories-sec">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="section-header">--}}
+{{--                    <div class="text-wrapper text-center">--}}
+{{--                        <h3 class="fw-500 no-margin">Find Your Best Match</h3>--}}
+{{--                        <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>--}}
+{{--                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12 p-relative">--}}
+{{--                <div class="category-slider">--}}
+{{--                    <div class="car-categories">--}}
+{{--                        <a href="index.html#">--}}
+{{--                            <img src="/images/match/match-1.jpg" class="img-fluid full-width" alt="Category Image" />--}}
+{{--                        </a>--}}
+{{--                        <div class="category-caption">--}}
+{{--                            <div class="category-wrapper">--}}
+{{--                                <a href="index.html#">--}}
+{{--                                    <h4 class="text-custom-white">Practice <span class="brand-logo">--}}
+{{--                      <img src="/images/bmw_logo.png" class="img-fluid" alt="brand logo">--}}
+{{--                    </span></h4>--}}
+{{--                                </a>--}}
+{{--                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="car-categories">--}}
+{{--                        <a href="index.html#">--}}
+{{--                            <img src="/images/match/match-2.jpg" class="img-fluid full-width" alt="Category Image" />--}}
+{{--                        </a>--}}
+{{--                        <div class="category-caption">--}}
+{{--                            <div class="category-wrapper">--}}
+{{--                                <a href="index.html#">--}}
+{{--                                    <h4 class="text-custom-white">Sports Car--}}
+{{--                                        <span class="brand-logo">--}}
+{{--                      <img src="/images/wv_logo.png" class="img-fluid" alt="brand logo">--}}
+{{--                    </span></h4>--}}
+{{--                                </a>--}}
+{{--                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="car-categories">--}}
+{{--                        <a href="index.html#">--}}
+{{--                            <img src="/images/match/match-3.jpg" class="img-fluid full-width" alt="Category Image" />--}}
+{{--                        </a>--}}
+{{--                        <div class="category-caption">--}}
+{{--                            <div class="category-wrapper">--}}
+{{--                                <a href="index.html#">--}}
+{{--                                    <h4 class="text-custom-white">Luxury--}}
+{{--                                        <span class="brand-logo">--}}
+{{--                      <img src="/images/bmw_logo.png" class="img-fluid" alt="brand logo">--}}
+{{--                    </span></h4>--}}
+{{--                                </a>--}}
+{{--                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="car-categories">--}}
+{{--                        <a href="index.html#">--}}
+{{--                            <img src="/images/match/match-4.jpg" class="img-fluid full-width" alt="Category Image" />--}}
+{{--                        </a>--}}
+{{--                        <div class="category-caption">--}}
+{{--                            <div class="category-wrapper">--}}
+{{--                                <a href="index.html#">--}}
+{{--                                    <h4 class="text-custom-white">Fmaily Car--}}
+{{--                                        <span class="brand-logo">--}}
+{{--                      <img src="/images/wv_logo.png" class="img-fluid" alt="brand logo">--}}
+{{--                    </span></h4>--}}
+{{--                                </a>--}}
+{{--                                <p class="text-custom-white no-margin">A masterful combination of style, power, sporty handling and comfort.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="category-slider-arrows">--}}
+{{--                    <div class="category-slider-prevtab slick-arrow" style=""> <i class="flaticon-left-chevron"></i>--}}
+{{--                    </div>--}}
+{{--                    <div class="category-slider-nexttab slick-arrow" style=""> <i class="flaticon-right-chevron"></i>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- Car Categories -->
 <!-- News Sec Desktop -->
 <section class="section-padding news-sec-desktop bg-light-theme d-none d-md-block">
@@ -1110,9 +1101,9 @@
             <div class="col-md-12">
                 <div class="section-header">
                     <div class="text-wrapper text-center">
-                        <h3 class="fw-500 no-margin">News and Technology</h3>
+                        <h3 class="fw-500 no-margin">Новости и технологии</h3>
                         <span class="line-grey"></span><span class="line-orange"></span><span class="line-grey"></span>
-                        <p class="text-dark-grey">A masterful combination of style, power, sporty handling and comfort. A masterful combination of style, power, sporty handling and comfort.</p>
+                        <p class="text-dark-grey">Мастерское сочетание стиля, мощности, спортивной управляемости и комфорта.</p>
                     </div>
                 </div>
             </div>
@@ -1251,78 +1242,78 @@
 </section>
 <!-- News Sec Mobile -->
 <!-- About counter -->
-<section class="about-counter-sec">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">500</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">Happy client</h5>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-2.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">1000</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">EQUIPMENTS</h5>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-3.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">100</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">EXPERT TRAINERS</h5>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-2.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-4.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">150</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">AWARD WIN</h5>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-5.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">20</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">PERSONAL TRAINERS</h5>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec">
-                    <img src="/images/about/aboutus-6.jpg" class="img-fluid full-width" alt="#">
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
-                <div class="counter-sec-content">
-                    <h3 class="text-custom-white mb-2"><span class="count">100</span> <i class="flaticon-add"></i></h3>
-                    <h5 class="text-custom-white no-margin text-uppercase rubik">CLASS ROOM</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="about-counter-sec">--}}
+{{--    <div class="container-fluid">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">500</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">Happy client</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-2.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">1000</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">EQUIPMENTS</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-3.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">100</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">EXPERT TRAINERS</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-2.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-4.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">150</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">AWARD WIN</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-5.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">20</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">PERSONAL TRAINERS</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec">--}}
+{{--                    <img src="/images/about/aboutus-6.jpg" class="img-fluid full-width" alt="#">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">--}}
+{{--                <div class="counter-sec-content">--}}
+{{--                    <h3 class="text-custom-white mb-2"><span class="count">100</span> <i class="flaticon-add"></i></h3>--}}
+{{--                    <h5 class="text-custom-white no-margin text-uppercase rubik">CLASS ROOM</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- About counter -->
 
 <!-- Video popup -->

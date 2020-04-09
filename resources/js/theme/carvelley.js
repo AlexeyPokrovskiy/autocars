@@ -72,6 +72,9 @@
 	$(".showmakebtn").click(function () {
 		$(".make>li>a>span").toggleClass('hidecar');
 	});
+	$(".show-all-category").click(function () {
+		$(".all-categories").toggleClass('all-categories-hide');
+	});
 	// menu 3 search
 	$.fn.searchBox = function (ev) {
 		var $searchEl = $('.search-elem');
@@ -134,7 +137,7 @@
 		$("#signup-text").show();
 		$("#signup-form").show();
 	});
-	// side nav 
+	// side nav
 	$(document).ready(function () {
 		$('.mobile-nav .sidenav li.custom-dropdown-nav>a').on('click', function () {
 			$(this).removeAttr('href');
@@ -357,7 +360,7 @@
 			}
 		}]
 	});
-	// Video 
+	// Video
 	$(document).on('click', '.js-videoPoster', function (e) {
 		e.preventDefault();
 		var poster = $(this);
