@@ -381,7 +381,7 @@
                                     <div class="car-grid-layout-box">
                                         <div class="car-grid-layout-inner text-center">
 
-                                            <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->mark->name}} {{$car->model->name}} </a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
+                                            <h5 class="car-name"><a href="/car/{{$car->id}}"  class="text-light-black">{{$car->mark->name}} {{$car->model->name}} {{$car->year}}</a><span class="text-orange float-right custom-tooltip" data-tip="Add to wishlist"><i class="flaticon-add"></i></span></h5>
 
                                             <p class="time-publication">
                                                 @if(((time()-strtotime($car->created_at))/3600) < 24)
@@ -395,7 +395,16 @@
                                                 @endif
                                             </p>
 
-                                            <p class="text-dark-grey">{{isset($car->core->modification)?$car->core->modification:$car->year." год"}}</p> <span class="text-orange price-text">${{$car->price}}</span>
+                                            <p class="text-dark-grey">
+                                                @if(isset($car->core->modification))
+                                                    {{$car->core->modification}}
+                                                @elseif(isset($car->volume))
+                                                    {{$car->volume}}
+                                                @else
+                                                   {!! "<br>" !!}
+                                                @endif
+                                            </p>
+                                            <span class="text-orange price-text">${{$car->price}}</span>
                                             <div class="car-grid-layout-img">
                                                 <a href="/car/{{$car->id}}">
                                                     <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
@@ -412,7 +421,15 @@
                                                         Не указано
                                                     @endif
                                                 </span>
-                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i> {{isset($car->core->transmission)?$car->core->transmission:"Не указана"}}</span>
+                                                <span class="text-dark-white"><i class="fas fa-cog mr-2"></i>
+                                                      @if(isset($car->transmission->name))
+                                                        {{$car->transmission->name}}
+                                                      @elseif(isset($car->core->transmission))
+                                                          {{$car->core->transmission}}
+                                                      @else
+                                                        Не указано
+                                                      @endif
+                                                </span>
                                             </div>
 
                                         </div>
@@ -426,213 +443,17 @@
 
                         </div>
                     </div>
-                    <h1 class="title2 no-margin">Поиск авто, страница #{{$cars->currentPage()}}</h1>
+                    <h1 class="title2 no-margin">{{$title}}</h1>
                 </div>
-                <div class="col-12">
-                    <div class="map-container">
-                        <div id="map-main"></div>
-                    </div>
-                </div>
+{{--                <div class="col-12">--}}
+{{--                    <div class="map-container">--}}
+{{--                        <div id="map-main"></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
 </div>
 <!-- listing -->
-<!-- Footer -->
-<footer class="bg-custom-black" id="footer-style-2">
-    <div class="offset-xl-1 col-xl-10">
-        <div class="section-padding pb-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="footer-top-sec col-md-12">
-                        <div class="cols5-head">
-                            <div class="cols">
-                                <div class="inner-box">
-                                    <a href="listing-1-style-2.html#">
-                                        <div class="img-sec">
-                                            <img src="/images/footericon-1.jpg" alt="Image">
-                                        </div>
-                                        <h6 class="text-custom-white">Sell Your Car <i class="flaticon-right-chevron"></i></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cols">
-                                <div class="inner-box">
-                                    <a href="listing-1-style-2.html#">
-                                        <div class="img-sec">
-                                            <img src="/images/footericon-2.jpg" alt="Image">
-                                        </div>
-                                        <h6 class="text-custom-white">Find A Car <i class="flaticon-right-chevron"></i></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cols">
-                                <div class="inner-box">
-                                    <a href="listing-1-style-2.html#">
-                                        <div class="img-sec">
-                                            <img src="/images/footericon-3.jpg" alt="Image">
-                                        </div>
-                                        <h6 class="text-custom-white">Find A Dealer <i class="flaticon-right-chevron"></i></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cols">
-                                <div class="inner-box">
-                                    <a href="listing-1-style-2.html#">
-                                        <div class="img-sec">
-                                            <img src="/images/footericon-4.jpg" alt="Image">
-                                        </div>
-                                        <h6 class="text-custom-white">Create Profile <i class="flaticon-right-chevron"></i></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cols">
-                                <div class="inner-box">
-                                    <a href="listing-1-style-2.html#">
-                                        <div class="img-sec">
-                                            <img src="/images/footericon-5.jpg" alt="Image">
-                                        </div>
-                                        <h6 class="text-custom-white">Contact Us <i class="flaticon-right-chevron"></i></h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="footer-bottom">
-                            <div class="ft-section-1">
-                                <ul>
-                                    <li class="text-custom-white">Passenger Cars</li>
-                                    <li class="float-right"><a href="listing-1-style-2.html#" class="text-custom-white">Up <i class="flaticon-up-chevron"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="ft-section-2">
-                                <p class="text-custom-white">Carvelley on the social web:</p>
-                                <ul class="social-icons">
-                                    <li><a href="listing-1-style-2.html#" class="text-dark-white"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="listing-1-style-2.html#" class="text-dark-white"><i class="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li><a href="listing-1-style-2.html#" class="text-dark-white"><i class="fab fa-pinterest-p"></i></a>
-                                    </li>
-                                    <li><a href="listing-1-style-2.html#" class="text-dark-white"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="ft-section-3">
-                                <div class="row">
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">About us</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">About Us</a>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Why Us</a>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">List a car</a>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Register Account</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">Online services</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Dealer Search</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Book a test drive</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Book Service Appointment</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Pre-Owned Cars</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">Purchase Advice</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Online Service Estimate</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Accessories Configurator</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Service Package Configurator</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Advance Assurance Program</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">DFSI</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Grievance Redressal</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Fair Practice Code</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Corporate Governance Policy</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Ombudsman Scheme for NBFC</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">Heading</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Nodal Officer DFSI</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">CSR Policy</a>
-                                                </li>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Interest Rate Model</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12">
-                                        <div class="footer-box">
-                                            <h6 class="text-custom-white">CSR Policy</h6>
-                                            <ul>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">CSR Policy</a>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Policy Def</a>
-                                                <li><a href="listing-1-style-2.html#" class="text-dark-white">Purchase Policy</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="copyright">
-                        <ul class="text-center">
-                            <li><a href="listing-1-style-2.html#" class="text-dark-white">© 2019. Carvelley India Pvt. Ltd. All Rights Reserved (provider)</a>
-                            </li>
-                            <li><a href="listing-1-style-2.html#" class="text-dark-white">Cookies</a>
-                            </li>
-                            <li><a href="listing-1-style-2.html#" class="text-dark-white">Data Protection</a>
-                            </li>
-                            <li><a href="listing-1-style-2.html#" class="text-dark-white">Legal Notice</a>
-                            </li>
-                            <li><a href="listing-1-style-2.html#" class="text-dark-white">Caution - Fraudulent Job offerings</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
 @endsection

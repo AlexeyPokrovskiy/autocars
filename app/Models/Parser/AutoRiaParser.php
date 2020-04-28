@@ -4,12 +4,13 @@ namespace App\Models\Parser;
 
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\DomCrawler\Crawler;
-use App\Models\Ref\Mark as Mark;
+use App\Models\Ref\Mark as MarkRef;
 use App\Models\Ref\ModelCar as ModelCar;
 use App\Models\Ref\CoreRef as CoreRef;
-use App\Models\Ref\Fuel as Fuel;
-use App\Models\Ref\City as City;
+use App\Models\Ref\Fuel as FuelRef;
+use App\Models\Ref\City as CityRef;
 use App\Models\Ref\Region as Region;
+use App\Models\Ref\Transmission as TransmissionRef;
 use App\Models\Auto\Auto as Auto;
 use App\Models\Auto\AutoFailed as AutoFailed;
 
@@ -38,14 +39,13 @@ class AutoRiaParser extends Model
         $this->crawler->addHtmlContent($html, 'UTF-8');
         $this->baseInfo();
         $this->getRegion();
-
     }
 
 
     public function runParse(){
         $data = array(
             "type" => 1,
-            "core_id" =>  $this->getBrand(),
+            "core_id" =>  $this->getCoreId(),
             "mark_id" =>  $this->model['mark_id'],
             "model_id" =>  $this->model['model_id'],
             "region_id" => $this->region['region_id'],
@@ -60,6 +60,8 @@ class AutoRiaParser extends Model
             "is_metallic" => 1,
             "year" => $this->baseInfo->productionDate,
             "vin" => "",
+            "transmission_id" => $this->getTransmission(),
+            "volume" => (float)$this->getVolume(),
             "run" => $this->getRun(),
             "fuel_id" => $this->getFuel(),
             "img" => $this->getImg(),
@@ -128,13 +130,13 @@ class AutoRiaParser extends Model
 
                 if($region_ref){
                     $region_arr["region_id"] = $region_ref->region_id;
-                    $city_ref = City::where("title_ru","Like","%".$city."%")->where("region_id",$region_ref->region_id)->first();
+                    $city_ref = CityRef::where("title_ru","Like","%".$city."%")->where("region_id",$region_ref->region_id)->first();
                     if($city_ref){
                         $region_arr["city_id"] = $city_ref->city_id;
                     }
                 }
             }else{
-                $city_ref = City::where("title_ru","Like","%".$result."%")->first();
+                $city_ref = CityRef::where("title_ru","Like","%".$result."%")->first();
                 if($city_ref){
                     $region_arr = array(
                         "city_id" => $city_ref->city_id,
@@ -150,7 +152,7 @@ class AutoRiaParser extends Model
 
 
 
-    public function getBrand(){
+    public function getCoreId(){
 
         //  тип кузова
         $body_type = mb_convert_encoding($this->baseInfo->bodyType, 'UTF-8', 'HTML-ENTITIES');
@@ -158,7 +160,7 @@ class AutoRiaParser extends Model
         $volume = $this->getVolume();
 
 
-        $mark = Mark::where("name","Like","%".explode(" ",$this->baseInfo->brand->name)[0]."%")->first();
+        $mark = MarkRef::where("name","Like","%".explode(" ",$this->baseInfo->brand->name)[0]."%")->first();
         $mark_id = isset($mark->id)?$mark->id:0;
         $model = ModelCar::where("name","Like","%".explode(" ",$this->baseInfo->model)[0]."%")->first();
         $model_id = isset($model->id)?$model->id:0;
@@ -283,13 +285,27 @@ class AutoRiaParser extends Model
             }
         }
 
-
         if(!$fuel){
             $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
             return 0;
         }else{
-            $fuel_result = Fuel::where('code',$fuel)->first()->id;
+            $fuel_result = FuelRef::where('code',$fuel)->first()->id;
             return $fuel_result;
+        }
+
+    }
+
+    public function getTransmission(){
+        $transmission_name = mb_convert_encoding($this->baseInfo->vehicleTransmission, 'UTF-8', 'HTML-ENTITIES');
+
+        //обьект справочника трансмиссий
+        $transmission = TransmissionRef::where("name","LIKE","%".$transmission_name."%")->first();
+
+        if(!$transmission){
+            $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
+            return 0;
+        }else{
+            return $transmission->id;
         }
 
     }

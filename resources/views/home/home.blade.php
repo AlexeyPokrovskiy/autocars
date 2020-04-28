@@ -7,14 +7,14 @@
 <section class="p-relative">
     <div class="main-slider home-2">
         <div class="slider-item">
-            <img src="/images/banner/bannerh4.jpg" alt="Slider" class="img-fluid full-width">
+            <img src="/images/banner/bannerh11.jpg" alt="Slider" class="img-fluid full-width">
             <div class="contant-wrapper">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="banner-text text-center">
-                                <p class="text-custom-white  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Найди машину своей мечты</p>
-                                <h1 class="text-custom-white fw-900  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Откройте для себя автомобиль <br><span class="text-orange">который подходит именно</span> вам!</h1>
+                                <p class="text-custom-white  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Бесплатные бесконечные обьявления</p>
+                                <h1 class="text-custom-white fw-900  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Продайте или купите авто<br><span class="text-orange">бесплатно</span> и удобно!</h1>
 {{--                                <div class="space-30"></div> <a href="index.html#" class="btn-second orange-btn  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">Learn More</a>--}}
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="banner-text text-center">
-                                <p class="text-custom-white  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Найди машину своей мечты</p>
+                                <p class="text-custom-white  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Купить Б/у авто</p>
                                 <h2 class="text-custom-white fw-900  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Откройте для себя и купите автомобиль <br><span class="text-orange">который подходит именно </span> вам!</h2>
 {{--                                <div class="space-30"></div> <a href="index.html#" class="btn-second black-btn  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">Book Now</a><a href="index.html#" class="btn-second orange-btn  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">Learn More</a>--}}
                             </div>
@@ -40,23 +40,6 @@
             </div>
             <div class="slider-overlay"></div>
         </div>
-{{--        <div class="slider-item">--}}
-{{--            <img src="/images/banner/bannerh12.jpg" alt="Slider" class="img-fluid full-width">--}}
-{{--            <div class="contant-wrapper">--}}
-{{--                <div class="container">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-sm-12">--}}
-{{--                            <div class="banner-text text-center">--}}
-{{--                                <p class="text-custom-white  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Получи машину своей мечты</p>--}}
-{{--                                <h1 class="text-custom-white fw-900  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Audi R8 Marine <br><span class="text-orange">$ 199</span> Monthly</h1>--}}
-{{--                                <div class="space-30"></div> <a href="index.html#" class="btn-second orange-btn  wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.5s">Test Drive Today</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="slider-overlay"></div>--}}
-{{--        </div>--}}
     </div>
     <div class="main-slider-arrows">
         <div class="main-slider-prevtab slick-arrow"> <i class="flaticon-left-chevron"></i>
@@ -73,13 +56,11 @@
             <div class="col-12">
                 <div class="car-search-form">
                     <ul class="nav nav-tabs">
-                        <li class="nav-item"> <a class="nav-link text-custom-white active" data-toggle="tab" href="index.html#allcondition">All Condition</a>
+                        <li class="nav-item"> <a class="nav-link text-custom-white active" data-toggle="tab" href="index.html#allcondition">Все</a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link text-custom-white" data-toggle="tab" href="index.html#newcar">New Cars</a>
+                        <li class="nav-item"> <a class="nav-link text-custom-white" data-toggle="tab" href="index.html#newcar">Новые Авто</a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link text-custom-white" data-toggle="tab" href="index.html#usedcar">Used Cars</a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link text-custom-white" data-toggle="tab" href="index.html#certifiedusedcar">Certified Used Cars</a>
+                        <li class="nav-item"> <a class="nav-link text-custom-white" data-toggle="tab" href="index.html#usedcar">Б/у Авто</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -88,7 +69,7 @@
                                 <div class="row">
                                     <div class="col-xl col-lg-4 col-sm-6">
                                         <select class="form-control form-control-custom">
-                                            <option value="">Choose Make</option>
+                                            <option value="">Выберите марку</option>
                                             <option value="acura">Acura (1)</option>
                                             <option value="bmw">BMW (2)</option>
                                             <option value="chevrolet">Chevrolet (4)</option>
@@ -107,7 +88,7 @@
                                     </div>
                                     <div class="col-xl col-lg-4 col-sm-6">
                                         <select class="form-control form-control-custom">
-                                            <option value="">Choose Model</option>
+                                            <option value="">Выберите модель</option>
                                             <option value="1-series">1 Series (1)</option>
                                             <option value="3-serie-model">3 Series (1)</option>
                                             <option value="370z">370Z (1)</option>
@@ -148,7 +129,7 @@
                                     </div>
                                     <div class="col-xl col-lg-4 col-sm-6">
                                         <select class="form-control form-control-custom">
-                                            <option value="">Max Price</option>
+                                            <option value="">Максимальная цена</option>
                                             <option value="5000">$5 000</option>
                                             <option value="10000">$10 000</option>
                                             <option value="15000">$15 000</option>
@@ -163,7 +144,7 @@
                                     </div>
                                     <div class="col-xl col-lg-4 col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" name="#" class="form-control form-control-custom" placeholder="Enter a location">
+                                            <input type="text" name="#" class="form-control form-control-custom" placeholder="Город">
                                         </div>
                                     </div>
                                     <div class="col-xl col-lg-4 col-sm-6">
@@ -262,95 +243,6 @@
                             </form>
                         </div>
                         <div class="tab-pane fade" id="usedcar">
-                            <form>
-                                <div class="row">
-                                    <div class="col-xl col-lg-4 col-sm-6">
-                                        <select class="form-control form-control-custom">
-                                            <option value="">Choose Make</option>
-                                            <option value="acura">Acura (1)</option>
-                                            <option value="bmw">BMW (2)</option>
-                                            <option value="chevrolet">Chevrolet (4)</option>
-                                            <option value="ford">Ford (4)</option>
-                                            <option value="honda">Honda (2)</option>
-                                            <option value="hyundai">Hyundai (1)</option>
-                                            <option value="kia">Kia (3)</option>
-                                            <option value="lamborghini">Lamborghini (1)</option>
-                                            <option value="lexus">Lexus (2)</option>
-                                            <option value="mazda">Mazda (3)</option>
-                                            <option value="mercedes-benz">Mercedes-Benz (0)</option>
-                                            <option value="nissan">Nissan (3)</option>
-                                            <option value="tesla">Tesla (1)</option>
-                                            <option value="toyota">Toyota (3)</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl col-lg-4 col-sm-6">
-                                        <select class="form-control form-control-custom">
-                                            <option value="">Choose Model</option>
-                                            <option value="1-series">1 Series (1)</option>
-                                            <option value="3-serie-model">3 Series (1)</option>
-                                            <option value="370z">370Z (1)</option>
-                                            <option value="5-active">5 Active (1)</option>
-                                            <option value="accord">Accord (1)</option>
-                                            <option value="altima">Altima (1)</option>
-                                            <option value="avalon">Avalon (1)</option>
-                                            <option value="c-class">C-Class (0)</option>
-                                            <option value="camry">Camry (1)</option>
-                                            <option value="civic">Civic (1)</option>
-                                            <option value="cr-v">CR-V (0)</option>
-                                            <option value="cruze">Cruze (2)</option>
-                                            <option value="cx-5">CX-5 (1)</option>
-                                            <option value="e-class">E-Class (0)</option>
-                                            <option value="elantra">Elantra (1)</option>
-                                            <option value="es-300h">ES 300h (0)</option>
-                                            <option value="explorer">Explorer (1)</option>
-                                            <option value="flying-spur">Flying Spur (0)</option>
-                                            <option value="focus">Focus (2)</option>
-                                            <option value="g-class">G-Class (0)</option>
-                                            <option value="huracan">Huracan (1)</option>
-                                            <option value="is-250-c">IS 250 C (1)</option>
-                                            <option value="malibu">Malibu (1)</option>
-                                            <option value="model-x">Model X (1)</option>
-                                            <option value="mustang">Mustang (1)</option>
-                                            <option value="mx-5">MX-5 (1)</option>
-                                            <option value="pilot">Pilot (0)</option>
-                                            <option value="rdx">RDX (1)</option>
-                                            <option value="rio">Rio (1)</option>
-                                            <option value="rx-350">RX 350 (1)</option>
-                                            <option value="silverado">Silverado (1)</option>
-                                            <option value="sorento">Sorento (1)</option>
-                                            <option value="soul">Soul (1)</option>
-                                            <option value="tacoma">Tacoma (1)</option>
-                                            <option value="veloster">Veloster (0)</option>
-                                            <option value="versa">Versa (1)</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl col-lg-4 col-sm-6">
-                                        <select class="form-control form-control-custom">
-                                            <option value="">Max Price</option>
-                                            <option value="5000">$5 000</option>
-                                            <option value="10000">$10 000</option>
-                                            <option value="15000">$15 000</option>
-                                            <option value="20000">$20 000</option>
-                                            <option value="30000">$30 000</option>
-                                            <option value="40000">$40 000</option>
-                                            <option value="50000">$50 000</option>
-                                            <option value="70000">$70 000</option>
-                                            <option value="80000">$80 000</option>
-                                            <option value="100000">$100 000</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl col-lg-4 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" name="#" class="form-control form-control-custom" placeholder="Enter a location">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl col-lg-4 col-sm-6">
-                                        <button class="btn-second orange-btn full-width" type="button"><i class="flaticon-search"></i> Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade" id="certifiedusedcar">
                             <form>
                                 <div class="row">
                                     <div class="col-xl col-lg-4 col-sm-6">

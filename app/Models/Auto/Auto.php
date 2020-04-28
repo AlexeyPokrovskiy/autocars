@@ -35,6 +35,8 @@ class Auto extends Model
         "is_metallic",
         "year",
         "vin",
+        "transmission_id",
+        "volume",
         "run" ,
         "fuel_id" ,
         "img",

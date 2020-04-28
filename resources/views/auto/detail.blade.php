@@ -123,6 +123,11 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="contant-wrapper">
+                    <h4 class="text-light-black">Описание</h4>
+                    <p class="text-dark-grey">{{$car->description}}</p>
+
+                </div>
                 <div class="car-details-tab">
                     <ul class="nav nav-tabs">
                         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Технические параметры</a>
@@ -290,12 +295,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="contant-wrapper">
-                    <h4 class="text-light-black">Описание</h4>
-                    <p class="text-dark-grey">{{$car->description}}</p>
-
-                </div>
-
 {{--                <div class="video-wrapper">--}}
 {{--                    <h4 class="text-light-black">Watch Video</h4>--}}
 {{--                    <div class="video_wrapper video_wrapper_full js-videoWrapper">--}}
