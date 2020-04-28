@@ -296,7 +296,11 @@ class AutoRiaParser extends Model
     }
 
     public function getTransmission(){
-        $transmission_name = mb_convert_encoding($this->baseInfo->vehicleTransmission, 'UTF-8', 'HTML-ENTITIES');
+        if(isset($this->baseInfo->vehicleTransmission)){
+            $transmission_name = mb_convert_encoding($this->baseInfo->vehicleTransmission, 'UTF-8', 'HTML-ENTITIES');
+        }else{
+            return 0;
+        }
 
         //обьект справочника трансмиссий
         $transmission = TransmissionRef::where("name","LIKE","%".$transmission_name."%")->first();
