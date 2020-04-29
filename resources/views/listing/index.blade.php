@@ -398,8 +398,6 @@
                                             <p class="text-dark-grey">
                                                 @if(isset($car->core->modification))
                                                     {{$car->core->modification}}
-                                                @elseif(isset($car->volume))
-                                                    {{$car->volume}}
                                                 @else
                                                    {!! "<br>" !!}
                                                 @endif
