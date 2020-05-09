@@ -72,7 +72,7 @@ class AutoRiaParser extends Model
             "description" => $this->getDescription(),
             "wheel" => 1,
         );
-        dd($data);
+
         $this->createAuto($data);
 
         return $data;
