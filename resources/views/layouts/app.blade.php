@@ -40,8 +40,8 @@
                 <div class="col-xl-6 col-lg-6 col-md-7 col-sm-12">
                     <div class="top-contact">
                         <ul>
-                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +380 93 158 84 85</a>
-                            </li>
+{{--                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +380 93 158 84 85</a>--}}
+{{--                            </li>--}}
                             <li><a href="/#" class="text-dark-grey"><i class="fas fa-map-marker-alt"></i> Украина</a>
                             </li>
 {{--                            <li><a href="/#" class="text-dark-grey"><i class="fas fa-crosshairs"></i> Cars Around me</a>--}}
@@ -338,23 +338,14 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0 rubik">
                                     <button class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="flaticon-supercar"></i> Luxury Car
+                                        <i class="flaticon-supercar"></i> Легковые
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <ul>
-                                        <li><a href="/#">Rolls-Royce Phantom</a>
-                                        </li>
-                                        <li><a href="/#">Mercedes</a>
-                                        </li>
-                                        <li><a href="/#">Bentley Bentayga</a>
-                                        </li>
-                                        <li><a href="/#">BMW 7-Series</a>
-                                        </li>
-                                        <li><a href="/#">Porsche Panamera</a>
-                                        </li>
+                                        Мото
                                     </ul>
                                 </div>
                             </div>
@@ -363,23 +354,14 @@
                             <div class="card-header" id="headingTwo">
                                 <h5 class="mb-0 rubik">
                                     <button class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <i class="flaticon-sportive-car"></i> Sports Car
+                                        <i class="flaticon-sportive-car"></i> Грузовики
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                 <div class="card-body">
                                     <ul>
-                                        <li><a href="/#">Porsche 911 Carrera</a>
-                                        </li>
-                                        <li><a href="/#">Jaguar F-Type</a>
-                                        </li>
-                                        <li><a href="/#">Lotus Evora</a>
-                                        </li>
-                                        <li><a href="/#">BMW i8</a>
-                                        </li>
-                                        <li><a href="/#">Nissan GT-R</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -388,73 +370,14 @@
                             <div class="card-header" id="headingThree">
                                 <h5 class="mb-0 rubik">
                                     <button class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="flaticon-coupe-car"></i> Economy Car
+                                        <i class="flaticon-coupe-car"></i> Спецтехника
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                 <div class="card-body">
                                     <ul>
-                                        <li><a href="/#">Nissan Micra</a>
-                                        </li>
-                                        <li><a href="/#">Chevrolet Monza</a>
-                                        </li>
-                                        <li><a href="/#">Ford Anglia</a>
-                                        </li>
-                                        <li><a href="/#">Suzuki Alto</a>
-                                        </li>
-                                        <li><a href="/#">Toyota Vios</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingfour">
-                                <h5 class="mb-0 rubik">
-                                    <button class="collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                                        <i class="flaticon-vintage-car"></i> Vintage Car
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
-                                <div class="card-body">
-                                    <ul>
-                                        <li><a href="/#">Shelby 427 Cobra</a>
-                                        </li>
-                                        <li><a href="/#">Jaguar E-Type</a>
-                                        </li>
-                                        <li><a href="/#">Maserati Ghibli 4.7</a>
-                                        </li>
-                                        <li><a href="/#">Aston Martin DB5</a>
-                                        </li>
-                                        <li><a href="/#">Boss 429 Mustang</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingfive">
-                                <h5 class="mb-0 rubik">
-                                    <button class="collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                                        <i class="flaticon-minivan-car"></i> Excutive Car
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
-                                <div class="card-body">
-                                    <ul>
-                                        <li><a href="/#">BMW 5 Series</a>
-                                        </li>
-                                        <li><a href="/#">Jaguar XF</a>
-                                        </li>
-                                        <li><a href="/#">Mercedes-Benz E-Class</a>
-                                        </li>
-                                        <li><a href="/#">Audi A6</a>
-                                        </li>
-                                        <li><a href="/#">Volvo S90</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -721,6 +644,7 @@
 
 <!-- Place all Scripts Here -->
 <script src="{{ mix('/js/theme/all.js') }}"></script>
+<script src="{{ mix('/js/app.js') }}"></script>
 
 
 </body>

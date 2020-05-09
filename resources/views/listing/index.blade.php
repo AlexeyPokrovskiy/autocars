@@ -360,7 +360,7 @@
             <div class="col-xl-9 col-lg-8">
                 <div class="right-search-filter-box">
                     <div>
-                        <h5 class="title2 no-margin">Поиск авто Легковые</h5>
+                        <h1 class="title2 no-margin">{{$h1}}</h1>
                     </div>
                     <div class="search-filter-options mb-0">
                         <div class="result-show-by-cat">
@@ -404,7 +404,7 @@
                                             </p>
                                             <span class="text-orange price-text">${{$car->price}}</span>
                                             <div class="car-grid-layout-img">
-                                                <a href="/car/{{$car->id}}">
+                                                <a href="/auto/{{$car->slug}}">
                                                     <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
                                                 </a>
                                             </div>
@@ -441,7 +441,6 @@
 
                         </div>
                     </div>
-                    <h1 class="title2 no-margin">{{$title}}</h1>
                 </div>
 {{--                <div class="col-12">--}}
 {{--                    <div class="map-container">--}}

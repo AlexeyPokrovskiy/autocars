@@ -132,8 +132,8 @@
                     <ul class="nav nav-tabs">
                         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tech-spec">Технические параметры</a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Опции</a>
-                        </li>
+{{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#accessories">Опции</a>--}}
+{{--                        </li>--}}
 {{--                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#performance">Performance</a>--}}
 {{--                        </li>--}}
                     </ul>
@@ -172,32 +172,46 @@
                                             <th colspan="2">ТЕХНИЧЕСКИЕ ПАРАМЕТРЫ</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Двигатель</td>
-                                            <td>{{@$car->core->modification}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мощность</td>
-                                            <td>{{@$car->core->horse_power}} л.с. ({{@$car->core->kwt}} KW)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Привод</td>
-                                            <td>{{@$car->core->drive}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Дверей</td>
-                                            <td>{{@$car->core->doors_count}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>КПП</td>
-                                            <td>{{@$car->core->transmission}}</td>
-                                        </tr>
-                                        </tbody>
+                                        @if($car->core)
+                                            <tbody>
+                                            <tr>
+                                                <td>Двигатель</td>
+                                                <td>{{@$car->core->modification}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Мощность</td>
+                                                <td>{{@$car->core->horse_power}} л.с. ({{@$car->core->kwt}} KW)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Привод</td>
+                                                <td>{{@$car->core->drive}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Дверей</td>
+                                                <td>{{@$car->core->doors_count}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>КПП</td>
+                                                <td>{{@$car->core->transmission}}</td>
+                                            </tr>
+                                            </tbody>
+                                         @else
+                                            <tbody>
+                                            <tr>
+                                                <td>Двигатель</td>
+                                                <td>{{sprintf("%01.2f", $car->volume)}} л. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>КПП</td>
+                                                <td>{{$car->transmission->name}}</td>
+                                            </tr>
+                                            </tbody>
+                                            @endif
                                     </table>
                                 </div>
                             </div>
                         </div>
+
                         <div class="tab-pane fade" id="accessories">
                             <div class="car-details-box">
                                 <div class="table-responsive">
@@ -288,12 +302,15 @@
                                 <div class="text-wrapper">
                                     <h4 class="text-light-black">Описание</h4>
                                     <p class="text-dark-grey">{{$car->description}}</p>
-
                                 </div>
 
                             </div>
                         </div>
                     </div>
+                    <p><a href="/listing/brand/{{$car->mark->code}}">Посмотреть другие {{$car->mark->name}} -></a></p>
+                    @if(isset($car->city))
+                        <p><a href="/listing/city/{{$car->city->city_id}}">Посмотреть другие в {{$car->city->title_ru}} -></a></p>
+                    @endif
                 </div>
 {{--                <div class="video-wrapper">--}}
 {{--                    <h4 class="text-light-black">Watch Video</h4>--}}
@@ -579,7 +596,7 @@
                 <div class="side-search-bar h-auto mb-4">
                     <div class="title-icon">
                         <h5 class="title"><i class="flaticon-eye"></i> Похожие</h5>
-                        <p><a href="/listing/brand/{{$car->mark->code}}">Посмотреть другие {{$car->mark->name}} -></a></p>
+                        <p><a href="/listing/brand/{{$car->mark->code}}/{{$car->model->code}}">Посмотреть другие {{$car->mark->name}} {{$car->model->name}}</a></p>
                     </div>
                     <div class="widget-search-filter">
                         <div class="widget-content">
@@ -595,7 +612,7 @@
                                 <!--./ todo-thumbnail-area -->
                                 <div class="content-entry-wrap">
                                     <div class="recent-content">
-                                        <h6 class="title"><a href="/car/{{$car_sim->id}}" class=" text-light-black">{{$car_sim->model->name}} {{$car_sim->mark->name}}</a></h6>
+                                        <h6 class="title"><a href="/auto/{{$car_sim->slug}}" class=" text-light-black">{{$car_sim->model->name}} {{$car_sim->mark->name}}</a></h6>
                                         <div class="recent-rating">
                                             <div class="rating-value"> <span>${{$car_sim->price}}</span></div>
                                         </div>

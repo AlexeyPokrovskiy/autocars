@@ -26,7 +26,7 @@ class HomeController extends Controller
 
 
     public function test(){
-        $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_nissan_leaf_26573171.html");
+        $parser = new \App\Models\Parser\AutoRiaParser("https://auto.ria.com/auto_ford_focus_26535293.html");
         $parser->runParse();
     }
 

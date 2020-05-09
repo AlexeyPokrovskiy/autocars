@@ -3,6 +3,7 @@
 namespace App\Models\Parser;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Symfony\Component\DomCrawler\Crawler;
 use App\Models\Ref\Mark as MarkRef;
 use App\Models\Ref\ModelCar as ModelCar;
@@ -44,7 +45,8 @@ class AutoRiaParser extends Model
 
     public function runParse(){
         $data = array(
-            "type" => 1,
+            "type" => 2,
+            "slug" => $this->getSlug(),
             "core_id" =>  $this->getCoreId(),
             "mark_id" =>  $this->model['mark_id'],
             "model_id" =>  $this->model['model_id'],
@@ -70,7 +72,7 @@ class AutoRiaParser extends Model
             "description" => $this->getDescription(),
             "wheel" => 1,
         );
-
+        dd($data);
         $this->createAuto($data);
 
         return $data;
@@ -103,6 +105,16 @@ class AutoRiaParser extends Model
     }
 
 
+
+    public function getSlug(){
+        $auto = Auto::latest()->first();
+        if(isset($this->baseInfo->brand->name) and isset($this->baseInfo->model)){
+            $slug = Str::slug(mb_substr("auto_".$this->baseInfo->brand->name."-".$this->baseInfo->model,0,40)."-".($auto->id+1),'-');
+        }else{
+            $slug = "auto_".($auto->id+1);
+        }
+        return $slug;
+    }
 
     public function getRegion(){
         $region_arr = array(

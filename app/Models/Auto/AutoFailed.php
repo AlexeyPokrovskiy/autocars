@@ -20,6 +20,7 @@ class AutoFailed extends Model
      */
     protected $fillable = [
         "type",
+        "slug",
         "core_id",
         "mark_id",
         "model_id",

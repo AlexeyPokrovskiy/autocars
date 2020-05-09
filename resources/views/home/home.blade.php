@@ -373,7 +373,7 @@
 
                                 <p class="text-dark-grey">{{isset($car->core->modification)?$car->core->modification:$car->year." год"}}</p> <span class="text-orange price-text">${{$car->price}}</span>
                                 <div class="car-grid-layout-img">
-                                    <a href="/car/{{$car->id}}">
+                                    <a href="/auto/{{$car->slug}}">
                                         <img src="{{$car->img}}" class="img-fluid full-width" alt="Car img">
                                     </a>
                                 </div>
