@@ -311,7 +311,7 @@ class AutoRiaParser extends Model
         if(isset($this->baseInfo->vehicleTransmission)){
             $transmission_name = mb_convert_encoding($this->baseInfo->vehicleTransmission, 'UTF-8', 'HTML-ENTITIES');
         }else{
-            return 0;
+            return 1;
         }
 
         //обьект справочника трансмиссий
@@ -319,7 +319,7 @@ class AutoRiaParser extends Model
 
         if(!$transmission){
             $this->parseFailedMessage[] = (__DIR__."|".__FUNCTION__."|".__LINE__);
-            return 0;
+            return 1;
         }else{
             return $transmission->id;
         }

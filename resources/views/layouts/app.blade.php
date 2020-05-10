@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -562,7 +562,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <iframe src="https://www.youtube.com/embed/AdZrEIo6UYU" allow="autoplay"></iframe>
+{{--                <iframe src="https://www.youtube.com/embed/AdZrEIo6UYU" allow="autoplay"></iframe>--}}
             </div>
         </div>
     </div>

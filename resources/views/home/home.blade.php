@@ -1219,7 +1219,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <iframe src="https://www.youtube.com/embed/AdZrEIo6UYU" allow="autoplay"></iframe>
+{{--                <iframe src="https://www.youtube.com/embed/AdZrEIo6UYU" allow="autoplay"></iframe>--}}
             </div>
         </div>
     </div>

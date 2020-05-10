@@ -332,7 +332,7 @@
     #menu-style-4 nav ul {
         display: none;
     }
-    
+
     #menu-style-1 .searchbox .input-group .input-group-prepend button:first-child {
         padding: 0 10px;
     }
@@ -1328,16 +1328,16 @@
     .car-design-tab-sec .tab-box .nav-tabs .nav-item{
         margin-right: 15px;
     }
-    #login-page .modal-body .social-login .social-btn a, 
+    #login-page .modal-body .social-login .social-btn a,
     #register-page .modal-body .social-login .social-btn a,
-    #login .modal-body .social-login .social-btn a, 
+    #login .modal-body .social-login .social-btn a,
     #register .modal-body .social-login .social-btn a{
         padding: 0 10px;
     }
     .car-categories-sec .category-slider .car-categories .category-caption{
         bottom: -75px;
     }
-    nav.custom-pagination .pagination li.page-item:first-child a, 
+    nav.custom-pagination .pagination li.page-item:first-child a,
     nav.custom-pagination .pagination li.page-item:last-child a {
         padding: 0 10px;
     }
