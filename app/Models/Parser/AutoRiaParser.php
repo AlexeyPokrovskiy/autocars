@@ -265,7 +265,7 @@ class AutoRiaParser extends Model
 
     public function getVolume(){
         $array_search = $this->crawler->filter('script')->extract(array('data-engine-volume'));
-        $volume = 0;
+        $volume = 1;
 
         foreach ($array_search as $item){
             if($item){
@@ -274,7 +274,7 @@ class AutoRiaParser extends Model
         }
 
         if(!$volume){
-            return 0;
+            return 1;
         }
 
         return $volume;
