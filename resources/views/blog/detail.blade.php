@@ -82,15 +82,15 @@
                             <!-- Social tag -->
                             <div class="social-tags"> <span class="text-light-black"> Поделиться</span>
                                 <ul>
-                                    <li class="fb"> <a href="blog-details-right.html"><i class="fab fa-facebook-f"></i></a>
+                                    <li class="fb"> <a href="https://www.facebook.com/sharer/sharer.php?display=popup&u=http://car-stock.com.ua/news/{{$blog->slug}}"><i class="fab fa-facebook-f"></i></a>
                                     </li>
-                                    <li class="tweet"> <a href="blog-details-right.html"><i class="fab fa-twitter"></i></a>
+                                    <li class="tweet"> <a href="#"><i class="fab fa-twitter"></i></a>
                                     </li>
-                                    <li class="messenger"> <a href="blog-details-right.html"><i class="fab fa-facebook-messenger"></i></a>
+                                    <li class="messenger"> <a href="#"><i class="fab fa-facebook-messenger"></i></a>
                                     </li>
-                                    <li class="pintrist"> <a href="blog-details-right.html"><i class="fab fa-pinterest-p"></i></a>
+                                    <li class="pintrist"> <a href="#"><i class="fab fa-pinterest-p"></i></a>
                                     </li>
-                                    <li class="whastsapp"> <a href="blog-details-right.html"><i class="fab fa-whatsapp"></i></a>
+                                    <li class="whastsapp"> <a href="#"><i class="fab fa-whatsapp"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -98,61 +98,7 @@
                             <!-- Comments -->
                             <div class="comments">
                                 <h4 class="text-light-black comment-title">Комментарии</h4>
-{{--                                <ul class="comment-list">--}}
-{{--                                    <li class="comment">--}}
-{{--                                        <div class="comment the-comment">--}}
-{{--                                            <div class="comment-avatar">--}}
-{{--                                                <img alt="image" src="/images/blog/avatar/avatar-2.jpg" class="avatar rounded-circle">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="comment-content">--}}
-{{--                                                <div class="comment-meta"> <span class="comment-time"> 15th May, 2019</span>--}}
-{{--                                                    <span class="comment-author"> <a href="#" class="url">Rosalina Pong</a></span>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="text">--}}
-{{--                                                    <div class="comment-text">--}}
-{{--                                                        <p class="text-dark-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <span class="reply"> <a rel="nofollow" class="text-light-black" href="#"><i class="fa fa-reply"></i> Reply</a> </span>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="comment">--}}
-{{--                                        <div class="comment the-comment">--}}
-{{--                                            <div class="comment-avatar">--}}
-{{--                                                <img alt="image" src="/images/blog/avatar/avatar-1.jpg" class="avatar rounded-circle">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="comment-content">--}}
-{{--                                                <div class="comment-meta"> <span class="comment-time"> 20th May, 2019</span>--}}
-{{--                                                    <span class="comment-author"> <a href="#" class="url">Arista Williamson</a></span>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="text">--}}
-{{--                                                    <div class="comment-text">--}}
-{{--                                                        <p class="text-dark-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <span class="reply"> <a rel="nofollow" class="text-light-black" href="#"><i class="fa fa-reply"></i> Reply</a> </span>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <ul class="comment-answer">--}}
-{{--                                            <li>--}}
-{{--                                                <div class="comment the-comment">--}}
-{{--                                                    <div class="comment-avatar">--}}
-{{--                                                        <img alt="image" src="/images/blog/avatar/avatar-3.jpg" class="avatar rounded-circle">--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="comment-content">--}}
-{{--                                                        <div class="comment-meta"> <span class="comment-time"> 15th May, 2019</span>--}}
-{{--                                                            <span class="comment-author"> <a href="#" class="url">Rosalina Pong</a></span>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="text">--}}
-{{--                                                            <div class="comment-text">--}}
-{{--                                                                <p class="text-dark-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <span class="reply"> <a rel="nofollow" class="text-light-black" href="#"><i class="fa fa-reply"></i> Reply</a> </span>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
+
                             </div>
                             <!-- Comments -->
                             <!-- Comment form -->
@@ -207,18 +153,7 @@
                         </div>
                         <!-- Popular News -->
                         <!-- tags -->
-                    {{--                        <div class="sidebar-widget">--}}
-                    {{--                            <h4 class="text-light-black widget-title"><i class="flaticon-price-tag"></i> Tags</h4>--}}
-                    {{--                            <div class="widget-content">--}}
-                    {{--                                <div class="tag-cloud">--}}
-                    {{--                                    <a href="/news">#luxury car</a>--}}
-                    {{--                                    <a href="/news">#excutive car</a>--}}
-                    {{--                                    <a href="/news">#economy car</a>--}}
-                    {{--                                    <a href="/news">#sports car</a>--}}
-                    {{--                                    <a href="/news">#vintage car</a>--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+
                     <!-- tags -->
                         <!-- Instagram Gallery -->
                         <div class="sidebar-widget">
