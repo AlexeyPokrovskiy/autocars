@@ -224,7 +224,7 @@
                         <ul>
                             <li class="custom-dropdown-nav"><a href="/" class="text-custom-white"><h3 class="mb-0">Главная</h3></a>
                             </li>
-                            <li><a href="in-media.html"><h3 class="mb-0">Блог</h3></a>
+                            <li><a href="/news"><h3 class="mb-0">Новости</h3></a>
                             </li>
                             <li class="custom-dropdown-nav"><a href="/listing"><h3 class="mb-0">Б/у авто</h3></a>
                             </li>
@@ -320,7 +320,7 @@
                             <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Автомобили б/у</a>
                             </li>
                             <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Новые авто</a>
-                            </li> <li class="menu-item"><a href="/listing" class="text-custom-white fw-600">Новости</a>
+                            </li> <li class="menu-item"><a href="/news" class="text-custom-white fw-600">Новости</a>
                             </li>
 
                             <li class="menu-item"><a href="contact.html" class="text-custom-white fw-600">Контакты</a>
