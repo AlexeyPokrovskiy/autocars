@@ -146,8 +146,8 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                     <div class="top-contact">
                         <ul>
-                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +123 4567 8910</a>
-                            </li>
+{{--                            <li><a href="/#" class="text-dark-grey "><i class="fas fa-phone-alt"></i> +123 4567 8910</a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </div>
@@ -170,12 +170,12 @@
                 <div class="col-sm-9 col-6">
                     <div class="logo">
                         <a href="/">
-                            <img src="/images/120x50logo.jpg" class="img-fluid" alt="Logo">
+                            <img src="/images/favicon.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="mobile-search align-item-center">
                         <div class="input-group">
-                            <input type="text" class="form-control h-100" placeholder="Search keywords, category, brand of part">
+                            <input type="text" class="form-control h-100" placeholder="Введите марку и модель">
                             <div class="input-group-append">
                                 <button class="btn-second orange-btn" type="submit"><i class="flaticon-search"></i>
                                 </button>
@@ -222,87 +222,13 @@
                           <a href="javascript:void(0)" class="closebtn" id="mobile-close-nav">X</a>
                           </span>
                         <ul>
-                            <li class="custom-dropdown-nav"><a href="javascript:void(0)" class="text-custom-white"><h3 class="mb-0">Home</h3></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/">Landing Page</a>
-                                    </li>
-                                    <li><a href="homepage-2.html">Home 1</a>
-                                    </li>
-                                    <li><a href="homepage-3.html">Home 3</a>
-                                    </li>
-                                    <li><a href="homepage-4.html">Home 4</a>
-                                    </li>
-                                    <li><a href="homepage-5.html">Home 5</a>
-                                    </li>
-                                    <li><a href="homepage-6.html">Home 6</a>
-                                    </li>
-                                    <li><a href="homepage-7.html">Home 7</a>
-                                    </li>
-                                </ul>
+                            <li class="custom-dropdown-nav"><a href="/" class="text-custom-white"><h3 class="mb-0">Главная</h3></a>
                             </li>
-                            <li><a href="in-media.html"><h3 class="mb-0">Media</h3></a>
+                            <li><a href="in-media.html"><h3 class="mb-0">Блог</h3></a>
                             </li>
-                            <li class="custom-dropdown-nav"><a href="javascript:void(0)"><h3 class="mb-0">Pages</h3></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="listing.html">Listing</a>
-                                    </li>
-                                    <li><a href="listing-1.html">Listing 1</a>
-                                    </li>
-                                    <li><a href="listing-2.html">Listing 2</a>
-                                    </li>
-                                    <li><a href="listing-3.html">Listing 3</a>
-                                    </li>
-                                    <li><a href="listing-4.html">Listing 4</a>
-                                    </li>
-                                    <li><a href="listing-1-style-2.html">Listing 1 Style 2</a>
-                                    </li>
-                                    <li><a href="listing-2-style-2.html">Listing 2 Style 2</a>
-                                    </li>
-                                    <li><a href="add-listing.html">Add Listing</a>
-                                    </li>
-                                    <li><a href="about.html">About Us</a>
-                                    </li>
-                                    <li><a href="car-details.html">Car Details</a>
-                                    </li>
-                                    <li><a href="car-page.html">Car Page</a>
-                                    </li>
-                                    <li><a href="user-page.html">User</a>
-                                    </li>
-                                    <li><a href="register.html">Register</a>
-                                    </li>
-                                    <li><a href="login.html">Login</a>
-                                    </li>
-                                    <li><a href="invoice.html">Invoice</a>
-                                    </li>
-                                    <li><a href="404.html">404</a>
-                                    </li>
-                                    <li><a href="coming-soon.html">Coming Soon</a>
-                                    </li>
-                                </ul>
+                            <li class="custom-dropdown-nav"><a href="/listing"><h3 class="mb-0">Б/у авто</h3></a>
                             </li>
-                            <li class="custom-dropdown-nav"><a href="javascript:void(0)" class="text-custom-white"><h3 class="mb-0">Blog</h3></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog.html">Blog Grid</a>
-                                    </li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                    </li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                    </li>
-                                    <li><a href="blog-details.html">Blog Single</a>
-                                    </li>
-                                    <li><a href="blog-details-gallery.html">Blog Gallery</a>
-                                    </li>
-                                    <li><a href="blog-details-video.html">Blog Video</a>
-                                    </li>
-                                    <li><a href="blog-details-quote.html">Blog Quote</a>
-                                    </li>
-                                    <li><a href="blog-details-left.html">Blog Details Left</a>
-                                    </li>
-                                    <li><a href="blog-details-right.html">Blog Details Right</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="pricing.html"><h3 class="mb-0">Pricing</h3></a>
+                            <li class="custom-dropdown-nav"><a href="/listing"><h3 class="mb-0">Новые авто</h3></a>
                             </li>
                             <li><a href="contact.html"><h3 class="mb-0">Контакты</h3></a>
                             </li>
@@ -519,35 +445,35 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="social-icons text-center">
                         <ul>
-                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-facebook-f"></i></a>
+                            <li><a href="https://www.facebook.com/car.stock.562" class="text-dark-white"><i class="fab fa-facebook-f"></i></a>
                             </li>
-                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-pinterest-p"></i></a>
-                            </li>
-                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-12">
-                    <div class="payement-cards">
-                        <ul>
-                            <li>
-                                <img src="/images/card-1.png" alt="Payment Icons">
-                            </li>
-                            <li>
-                                <img src="/images/card-2.jpg" alt="Payment Icons">
-                            </li>
-                            <li>
-                                <img src="/images/card-3.jpg" alt="Payment Icons">
-                            </li>
-                            <li>
-                                <img src="/images/card-4.png" alt="Payment Icons">
+{{--                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-twitter"></i></a>--}}
+{{--                            </li>--}}
+{{--                            <li><a href="index.html#" class="text-dark-white"><i class="fab fa-pinterest-p"></i></a>--}}
+{{--                            </li>--}}
+                            <li><a href="https://www.instagram.com/car_stock.com.ua/" class="text-dark-white"><i class="fab fa-instagram"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
+{{--                <div class="col-xl-4 col-lg-4 col-md-12">--}}
+{{--                    <div class="payement-cards">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                <img src="/images/card-1.png" alt="Payment Icons">--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <img src="/images/card-2.jpg" alt="Payment Icons">--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <img src="/images/card-3.jpg" alt="Payment Icons">--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <img src="/images/card-4.png" alt="Payment Icons">--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -585,7 +511,7 @@
                         <input type="password" class="form-control" name="#" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn-second orange-btn full-width">Sign Up</button>
+                        <button type="submit" class="btn-second orange-btn full-width">Войти</button>
                     </div>
                 </form>
                 <div class="form-excerpts">

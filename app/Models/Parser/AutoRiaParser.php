@@ -265,7 +265,8 @@ class AutoRiaParser extends Model
 
     public function getVolume(){
         $array_search = $this->crawler->filter('script')->extract(array('data-engine-volume'));
-        $volume = 1;
+        //По умолчанию 2л якобы
+        $volume = 2;
 
         foreach ($array_search as $item){
             if($item){
@@ -274,7 +275,7 @@ class AutoRiaParser extends Model
         }
 
         if(!$volume){
-            return 1;
+            return 2;
         }
 
         return $volume;
@@ -311,6 +312,7 @@ class AutoRiaParser extends Model
         if(isset($this->baseInfo->vehicleTransmission)){
             $transmission_name = mb_convert_encoding($this->baseInfo->vehicleTransmission, 'UTF-8', 'HTML-ENTITIES');
         }else{
+            //По умолчанию Механика якобы
             return 1;
         }
 
