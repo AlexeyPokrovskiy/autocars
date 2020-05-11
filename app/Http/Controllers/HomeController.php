@@ -10,8 +10,6 @@ use Symfony\Component\DomCrawler\Crawler;
 class HomeController extends Controller
 {
     public function index(){
-
-
         $cars = Auto::LastAuto(6)->get();
         $marks = Mark::orderBy("is_popular","desc")->get();
 
@@ -49,5 +47,9 @@ class HomeController extends Controller
 
     public function test3(){
         \App\Jobs\StartParseAvito::dispatch();
+    }
+    public function test4(){
+        $parser = new \App\Models\Parser\BlogParser();
+        $parser->index();
     }
 }
