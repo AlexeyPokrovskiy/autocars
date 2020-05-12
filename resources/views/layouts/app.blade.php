@@ -8,7 +8,7 @@
     <meta name="keywords" content="#">
     <title>@yield("title")</title>
     <meta  name="description" content="@yield("meta_description")">
-    <meta name="yandex-verification" content="0ced6f1bf4142ef2" />
+    <meta name="yandex-verification" content="1a1761d075a5fce7" />
 
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon.png">
