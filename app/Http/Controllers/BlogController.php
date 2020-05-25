@@ -24,6 +24,9 @@ class BlogController extends Controller
     public function showNews($slug){
         $blog = Blog::where('slug',$slug)->first();
 
+        $blog->viewed++;
+        $blog->update();
+
         if(!$blog){
             abort(404);
         }
